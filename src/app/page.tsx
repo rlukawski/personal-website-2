@@ -12,6 +12,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
 import { grey } from '@mui/material/colors';
+import Image from "next/image";
 
 const pages = ["About", "Projects", "Certificates", "Contact"];
 
@@ -176,11 +177,83 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
+function HeaderSection() {
+  return (
+    <Box
+      sx={{
+        width: "100%",
+        backgroundColor: "rgba(255, 255, 255, 0.9)",
+        backdropFilter: "blur(10px)",
+        borderBottom: `1px solid ${grey[200]}`,
+        py: { xs: 4, md: 6 },
+        mt: { xs: 8, md: 8 },
+      }}
+    >
+      <Container maxWidth="xl">
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: { xs: "center", md: "center" },
+            justifyContent: "space-between",
+            gap: { xs: 3, md: 4 },
+          }}
+        >
+          <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" } }}>
+            <Typography
+              variant="h3"
+              component="h1"
+              sx={{
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".2rem",
+                color: grey[800],
+                mb: 1,
+              }}
+            >
+              Rafał Łukawski
+            </Typography>
+            <Typography
+              variant="h5"
+              component="h2"
+              sx={{
+                color: grey[600],
+                fontWeight: 400,
+              }}
+            >
+              Full-stack developer and IT Project Manager
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              width: { xs: 200, md: 256 },
+              height: { xs: 200, md: 256 },
+              position: "relative",
+              borderRadius: 4,
+              overflow: "hidden",
+              flexShrink: 0,
+            }}
+          >
+            <Image
+              src="/author.jpg"
+              alt="Rafał Łukawski"
+              fill
+              style={{ objectFit: "cover" }}
+              priority
+            />
+          </Box>
+        </Box>
+      </Container>
+    </Box>
+  );
+}
+
 export default function Page() {
   return (
     <>
       <ResponsiveAppBar />
-      <Container maxWidth="xl" sx={{ py: 4, px: 2, pt: { xs: 10, md: 9 } }}>
+      <HeaderSection />
+      <Container maxWidth="xl" sx={{ py: 4, px: 2 }}>
         <Typography variant="h4" component="h1" gutterBottom>
           Lorem Ipsum
         </Typography>
