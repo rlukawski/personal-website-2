@@ -87,7 +87,7 @@ function ResponsiveAppBar() {
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
-        <Toolbar disableGutters sx={{ alignItems: 'center' }}>
+        <Toolbar disableGutters sx={{ alignItems: 'center', minHeight: 64, height: 64 }}>
           <Typography
             variant="h6"
             noWrap
@@ -95,26 +95,8 @@ function ResponsiveAppBar() {
             href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Rafał Łukawski
-          </Typography>
-
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
+              display: 'flex',
+              flexGrow: { xs: 1, md: 0 },
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
