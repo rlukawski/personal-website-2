@@ -17,12 +17,11 @@ export function SectionLayout({ title, children, subtitle }: SectionLayoutProps)
       sx={{
         width: "100%",
         py: { xs: 4, md: 6 },
-        px: { xs: 2, md: 4 },
         display: "flex",
         justifyContent: "center",
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ paddingX: 0 }}>
         <Box
           sx={{
             backgroundColor: 'white',

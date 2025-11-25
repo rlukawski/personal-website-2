@@ -10,12 +10,12 @@ import { ProjectsSection } from "@/components/ProjectsSection";
 
 export default function Page() {
   return (
-    <Container maxWidth="xl" sx={{ backgroundColor: grey[100] }}>
+    <Container maxWidth="xl" sx={{ backgroundColor: grey[100], paddingX: 0 }}>
       <ResponsiveAppBar />
       <HeaderSection />
       <AboutSection />
       <ProjectsSection />
-      <Container maxWidth="xl" sx={{ py: 4, px: 2 }}>
+      <Container maxWidth="md" sx={{ py: 4, px: 2 }}>
         <Typography variant="h4" component="h1" gutterBottom>
           Lorem Ipsum
         </Typography>
