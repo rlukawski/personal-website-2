@@ -287,10 +287,11 @@ function AboutSection() {
       <Container maxWidth="xl">
         <Box
           sx={{
-            backgroundColor: grey[200],
+            backgroundColor: 'white',
             border: `1px solid rgba(255, 255, 255, 0.3)`,
             p: { xs: 3, md: 5 },
-            transition: "all 0.3s ease",
+            transition: `all ${TRANSITION_TIMEOUT}ms ease`,
+            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.25)",
             "&:hover": {
               boxShadow: "0 12px 40px 0 rgba(31, 38, 135, 0.2)",
             },
