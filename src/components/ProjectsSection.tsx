@@ -12,6 +12,7 @@ import Image from "next/image";
 import CloseIcon from "@mui/icons-material/Close";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { SectionLayout } from "./SectionLayout";
 import { Project } from "./types";
 
@@ -214,9 +215,11 @@ export function ProjectsSection() {
                           textDecoration: "none",
                           fontSize: "0.9rem",
                           mt: 0.5,
+                          display: "inline-flex",
+                          alignItems: "center",
                         }}
                       >
-                        ↗
+                        <FaExternalLinkAlt />
                       </Link>
                     )}
                   </Box>
