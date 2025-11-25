@@ -17,7 +17,7 @@ const pages = ["About", "Projects", "Certificates", "Contact"];
 interface AnimatedHamburgerProps {
   isOpen: boolean;
 }
-
+const TRANSITION_TIMEOUT = 200
 function AnimatedHamburger({ isOpen }: AnimatedHamburgerProps) {
   return (
     <Box
@@ -36,7 +36,7 @@ function AnimatedHamburger({ isOpen }: AnimatedHamburgerProps) {
           height: 2,
           backgroundColor: "currentColor",
           borderRadius: 1,
-          transition: "all 0.3s ease-in-out",
+          transition: `all ${TRANSITION_TIMEOUT}ms ease-in-out`,
           transformOrigin: "center",
           transform: isOpen ? "translateY(-50%) rotate(45deg)" : "none",
         }}
@@ -50,7 +50,7 @@ function AnimatedHamburger({ isOpen }: AnimatedHamburgerProps) {
           height: 2,
           backgroundColor: "currentColor",
           borderRadius: 1,
-          transition: "all 0.3s ease-in-out",
+          transition: `all ${TRANSITION_TIMEOUT}ms ease-in-out`,
           opacity: isOpen ? 0 : 1,
           transform: "translateY(-50%)",
         }}
@@ -64,7 +64,7 @@ function AnimatedHamburger({ isOpen }: AnimatedHamburgerProps) {
           height: 2,
           backgroundColor: "currentColor",
           borderRadius: 1,
-          transition: "all 0.3s ease-in-out",
+          transition: `all ${TRANSITION_TIMEOUT}ms ease-in-out`,
           transformOrigin: "center",
           transform: isOpen
             ? "translateY(-50%) rotate(-45deg)"
@@ -158,10 +158,9 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: "block", md: "none" } }}
-              TransitionComponent={Fade}
-              TransitionProps={{
-                timeout: 300,
-              }}
+              transitionDuration={TRANSITION_TIMEOUT}
+
+
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
@@ -175,118 +174,4 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default function Page() {
-  return (
-    <>
-      <ResponsiveAppBar />
-      <Container maxWidth="xl" sx={{ py: 4, px: 2, pt: { xs: 10, md: 9 } }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Lorem Ipsum
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-          ea commodo consequat. Duis aute irure dolor in reprehenderit in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-          officia deserunt mollit anim id est laborum.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-          ab illo inventore veritatis et quasi architecto beatae vitae dicta
-          sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-          aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
-          qui ratione voluptatem sequi nesciunt.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-          consectetur, adipisci velit, sed quia non numquam eius modi tempora
-          incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
-          ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
-          laboriosam, nisi ut aliquid ex ea commodi consequatur?
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-          quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-          voluptas nulla pariatur? At vero eos et accusamus et iusto odio
-          dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-          atque corrupti quos dolores et quas molestias excepturi sint
-          occaecati cupiditate non provident.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Similique sunt in culpa qui officia deserunt mollitia animi, id est
-          laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita
-          distinctio. Nam libero tempore, cum soluta nobis est eligendi optio
-          cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-          omnis voluptas assumenda est, omnis dolor repellendus.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Temporibus autem quibusdam et aut officiis debitis aut rerum
-          necessitatibus saepe eveniet ut et voluptates repudiandae sint et
-          molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente
-          delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
-          perferendis doloribus asperiores repellat.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-          officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
-          omnis iste natus error sit voluptatem accusantium doloremque
-          laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-          veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-          fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
-          sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
-          sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
-          tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-          suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
-          autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
-          nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-          voluptas nulla pariatur?
-        </Typography>
-        <Typography variant="body1" paragraph>
-          At vero eos et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-          et quas molestias excepturi sint occaecati cupiditate non provident,
-          similique sunt in culpa qui officia deserunt mollitia animi, id est
-          laborum et dolorum fuga.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Et harum quidem rerum facilis est et expedita distinctio. Nam libero
-          tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo
-          minus id quod maxime placeat facere possimus, omnis voluptas
-          assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et
-          aut officiis debitis aut rerum necessitatibus saepe eveniet ut et
-          voluptates repudiandae sint et molestiae non recusandae.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-          voluptatibus maiores alias consequatur aut perferendis doloribus
-          asperiores repellat. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Typography>
-      </Container>
-    </>
-  );
-}
+export default ResponsiveAppBar;
