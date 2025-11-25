@@ -11,7 +11,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
-import { grey } from '@mui/material/colors';
+import { grey } from "@mui/material/colors";
 import Image from "next/image";
 
 const pages = ["About", "Projects", "Certificates", "Contact"];
@@ -19,7 +19,7 @@ const pages = ["About", "Projects", "Certificates", "Contact"];
 interface AnimatedHamburgerProps {
   isOpen: boolean;
 }
-const TRANSITION_TIMEOUT = 200
+const TRANSITION_TIMEOUT = 200;
 function AnimatedHamburger({ isOpen }: AnimatedHamburgerProps) {
   return (
     <Box
@@ -92,7 +92,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar 
+    <AppBar
       position="fixed"
       sx={{
         backdropFilter: "blur(10px)",
@@ -162,8 +162,6 @@ function ResponsiveAppBar() {
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: "block", md: "none" } }}
               transitionDuration={TRANSITION_TIMEOUT}
-
-
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
@@ -195,11 +193,11 @@ function HeaderSection() {
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             alignItems: { xs: "center", md: "center" },
-            justifyContent: "space-between",
+            justifyContent: "space-evenly",
             gap: { xs: 3, md: 4 },
           }}
         >
-          <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" } }}>
+          <Box sx={{ textAlign: { xs: "center", md: "left" } }}>
             <Typography
               variant="h3"
               component="h1"
@@ -221,7 +219,7 @@ function HeaderSection() {
                 fontWeight: 400,
               }}
             >
-              Full-stack developer and IT Project Manager
+              Software Developer and IT Project Manager
             </Typography>
           </Box>
           <Box
@@ -258,13 +256,13 @@ export default function Page() {
           Lorem Ipsum
         </Typography>
         <Typography variant="body1" paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-          ea commodo consequat. Duis aute irure dolor in reprehenderit in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-          officia deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
         </Typography>
         <Typography variant="body1" paragraph>
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -277,17 +275,17 @@ export default function Page() {
         <Typography variant="body1" paragraph>
           Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
           consectetur, adipisci velit, sed quia non numquam eius modi tempora
-          incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim
-          ad minima veniam, quis nostrum exercitationem ullam corporis suscipit
-          laboriosam, nisi ut aliquid ex ea commodi consequatur?
+          incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
+          enim ad minima veniam, quis nostrum exercitationem ullam corporis
+          suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
         </Typography>
         <Typography variant="body1" paragraph>
           Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
           quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
           voluptas nulla pariatur? At vero eos et accusamus et iusto odio
           dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-          atque corrupti quos dolores et quas molestias excepturi sint
-          occaecati cupiditate non provident.
+          atque corrupti quos dolores et quas molestias excepturi sint occaecati
+          cupiditate non provident.
         </Typography>
         <Typography variant="body1" paragraph>
           Similique sunt in culpa qui officia deserunt mollitia animi, id est
@@ -306,9 +304,10 @@ export default function Page() {
         <Typography variant="body1" paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.
         </Typography>
         <Typography variant="body1" paragraph>
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
@@ -322,7 +321,8 @@ export default function Page() {
           fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
           sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
           sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
-          tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+          tempora incidunt ut labore et dolore magnam aliquam quaerat
+          voluptatem.
         </Typography>
         <Typography variant="body1" paragraph>
           Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
@@ -341,9 +341,9 @@ export default function Page() {
         <Typography variant="body1" paragraph>
           Et harum quidem rerum facilis est et expedita distinctio. Nam libero
           tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo
-          minus id quod maxime placeat facere possimus, omnis voluptas
-          assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et
-          aut officiis debitis aut rerum necessitatibus saepe eveniet ut et
+          minus id quod maxime placeat facere possimus, omnis voluptas assumenda
+          est, omnis dolor repellendus. Temporibus autem quibusdam et aut
+          officiis debitis aut rerum necessitatibus saepe eveniet ut et
           voluptates repudiandae sint et molestiae non recusandae.
         </Typography>
         <Typography variant="body1" paragraph>
