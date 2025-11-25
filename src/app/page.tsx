@@ -217,10 +217,40 @@ function HeaderSection() {
               sx={{
                 color: grey[600],
                 fontWeight: 400,
+                mb: 2,
               }}
             >
               Software Developer and IT Project Manager
             </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+                pl: { xs: 0, md: 2 },
+                justifyContent: { xs: "center", md: "flex-start" },
+              }}
+            >
+              <Box
+                sx={{
+                  width: 8,
+                  height: 8,
+                  borderRadius: "50%",
+                  backgroundColor: "#22c55e",
+                  flexShrink: 0,
+                }}
+              />
+              <Typography
+                variant="h6"
+                component="p"
+                sx={{
+                  color: grey[800],
+                  fontWeight: 600,
+                }}
+              >
+                Let's build products that matter!
+              </Typography>
+            </Box>
           </Box>
           <Box
             sx={{
