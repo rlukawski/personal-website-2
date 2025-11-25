@@ -11,7 +11,6 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
-import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 
@@ -88,9 +87,7 @@ function ResponsiveAppBar() {
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
-        <Toolbar disableGutters sx={{
-          alignItems: 'center'
-        }}>
+        <Toolbar disableGutters sx={{ alignItems: 'center' }}>
           <Typography
             variant="h6"
             noWrap
@@ -110,7 +107,7 @@ function ResponsiveAppBar() {
           </Typography>
 
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
             component="a"
             href="#app-bar-with-responsive-menu"
@@ -132,7 +129,7 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ color: 'white', display: 'block' }}
               >
                 {page}
               </Button>
