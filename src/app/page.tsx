@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const pages = ['About', 'Projects', 'Certificates', 'Contact'];
 
 interface AnimatedHamburgerProps {
   isOpen: boolean;
