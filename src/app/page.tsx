@@ -180,9 +180,6 @@ function HeaderSection() {
     <Box
       sx={{
         width: "100%",
-        backgroundColor: "rgba(255, 255, 255, 0.9)",
-        backdropFilter: "blur(10px)",
-        borderBottom: `1px solid ${grey[200]}`,
         py: { xs: 4, md: 6 },
         mt: { xs: 8, md: 8 },
       }}
@@ -276,11 +273,83 @@ function HeaderSection() {
   );
 }
 
+function AboutSection() {
+  return (
+    <Box
+      sx={{
+        width: "100%",
+        py: { xs: 4, md: 6 },
+        px: { xs: 2, md: 4 },
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <Container maxWidth="xl">
+        <Box
+          sx={{
+            backgroundColor: grey[200],
+            border: `1px solid rgba(255, 255, 255, 0.3)`,
+            p: { xs: 3, md: 5 },
+            transition: "all 0.3s ease",
+            "&:hover": {
+              boxShadow: "0 12px 40px 0 rgba(31, 38, 135, 0.2)",
+            },
+          }}
+        >
+          <Typography
+            variant="h4"
+            component="h2"
+            sx={{
+              fontFamily: "monospace",
+              fontWeight: 700,
+              letterSpacing: ".2rem",
+              color: grey[800],
+              mb: 3,
+            }}
+          >
+            About
+          </Typography>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{
+              color: grey[700],
+              lineHeight: 1.8,
+              fontSize: { xs: "1rem", md: "1.1rem" },
+              mb: 3,
+            }}
+          >
+            Hello, my name is Rafał Łukawski. I'm a full-stack developer with
+            over 5 years of modern frontend/backend experience and over 20 years
+            in IT. I'm passionate about the entire software development
+            lifecycle—from system architecture, through implementation, to
+            production deployment.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              color: grey[700],
+              lineHeight: 1.8,
+              fontSize: { xs: "1rem", md: "1.1rem" },
+            }}
+          >
+            Google Cloud Professional Architect (2024) | Professional Scrum
+            Master | Built systems for millions of users at Onet.pl | Led
+            telecommunications projects at TP.SA | Currently developing complex
+            React/Next.js applications and mentoring developers.
+          </Typography>
+        </Box>
+      </Container>
+    </Box>
+  );
+}
+
 export default function Page() {
   return (
-    <>
+    <Container maxWidth="xl" sx={{ backgroundColor: grey[100] }}>
       <ResponsiveAppBar />
       <HeaderSection />
+      <AboutSection />
       <Container maxWidth="xl" sx={{ py: 4, px: 2 }}>
         <Typography variant="h4" component="h1" gutterBottom>
           Lorem Ipsum
@@ -331,66 +400,7 @@ export default function Page() {
           delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
           perferendis doloribus asperiores repellat.
         </Typography>
-        <Typography variant="body1" paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-          officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
-          omnis iste natus error sit voluptatem accusantium doloremque
-          laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-          veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-          fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
-          sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
-          sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
-          tempora incidunt ut labore et dolore magnam aliquam quaerat
-          voluptatem.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-          suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
-          autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
-          nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
-          voluptas nulla pariatur?
-        </Typography>
-        <Typography variant="body1" paragraph>
-          At vero eos et accusamus et iusto odio dignissimos ducimus qui
-          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-          et quas molestias excepturi sint occaecati cupiditate non provident,
-          similique sunt in culpa qui officia deserunt mollitia animi, id est
-          laborum et dolorum fuga.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Et harum quidem rerum facilis est et expedita distinctio. Nam libero
-          tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo
-          minus id quod maxime placeat facere possimus, omnis voluptas assumenda
-          est, omnis dolor repellendus. Temporibus autem quibusdam et aut
-          officiis debitis aut rerum necessitatibus saepe eveniet ut et
-          voluptates repudiandae sint et molestiae non recusandae.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis
-          voluptatibus maiores alias consequatur aut perferendis doloribus
-          asperiores repellat. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </Typography>
       </Container>
-    </>
+    </Container>
   );
 }
