@@ -1,18 +1,18 @@
 "use client";
 
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import Fade from '@mui/material/Fade';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
+import Fade from "@mui/material/Fade";
 
-const pages = ['About', 'Projects', 'Certificates', 'Contact'];
+const pages = ["About", "Projects", "Certificates", "Contact"];
 
 interface AnimatedHamburgerProps {
   isOpen: boolean;
@@ -24,49 +24,51 @@ function AnimatedHamburger({ isOpen }: AnimatedHamburgerProps) {
       sx={{
         width: 24,
         height: 18,
-        position: 'relative',
+        position: "relative",
       }}
     >
       <Box
         sx={{
-          position: 'absolute',
-          top: isOpen ? '50%' : 0,
+          position: "absolute",
+          top: isOpen ? "50%" : 0,
           left: 0,
-          width: '100%',
+          width: "100%",
           height: 2,
-          backgroundColor: 'currentColor',
+          backgroundColor: "currentColor",
           borderRadius: 1,
-          transition: 'all 0.3s ease-in-out',
-          transformOrigin: 'center',
-          transform: isOpen ? 'translateY(-50%) rotate(45deg)' : 'none',
+          transition: "all 0.3s ease-in-out",
+          transformOrigin: "center",
+          transform: isOpen ? "translateY(-50%) rotate(45deg)" : "none",
         }}
       />
       <Box
         sx={{
-          position: 'absolute',
-          top: '50%',
+          position: "absolute",
+          top: "50%",
           left: 0,
-          width: '100%',
+          width: "100%",
           height: 2,
-          backgroundColor: 'currentColor',
+          backgroundColor: "currentColor",
           borderRadius: 1,
-          transition: 'all 0.3s ease-in-out',
+          transition: "all 0.3s ease-in-out",
           opacity: isOpen ? 0 : 1,
-          transform: 'translateY(-50%)',
+          transform: "translateY(-50%)",
         }}
       />
       <Box
         sx={{
-          position: 'absolute',
-          top: isOpen ? '50%' : '100%',
+          position: "absolute",
+          top: isOpen ? "50%" : "100%",
           left: 0,
-          width: '100%',
+          width: "100%",
           height: 2,
-          backgroundColor: 'currentColor',
+          backgroundColor: "currentColor",
           borderRadius: 1,
-          transition: 'all 0.3s ease-in-out',
-          transformOrigin: 'center',
-          transform: isOpen ? 'translateY(-50%) rotate(-45deg)' : 'translateY(-100%)',
+          transition: "all 0.3s ease-in-out",
+          transformOrigin: "center",
+          transform: isOpen
+            ? "translateY(-50%) rotate(-45deg)"
+            : "translateY(-100%)",
         }}
       />
     </Box>
@@ -74,7 +76,9 @@ function AnimatedHamburger({ isOpen }: AnimatedHamburgerProps) {
 }
 
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
+    null
+  );
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -87,37 +91,42 @@ function ResponsiveAppBar() {
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
-        <Toolbar disableGutters sx={{ alignItems: 'center', minHeight: 64, height: 64 }}>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: 'flex',
-              flexGrow: { xs: 1, md: 0 },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Rafał Łukawski
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+        <Toolbar
+          disableGutters
+          sx={{ alignItems: "center", minHeight: 64, height: 64 }}
+        >
+          <Box sx={{ display: "flex", alignItems: "baseline", flexGrow: 1 }}>
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="#app-bar-with-responsive-menu"
+              sx={{
+                mr: 2,
+                display: "flex",
+                flexGrow: { xs: 1, md: 0 },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              Rafał Łukawski
+            </Typography>
+            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              {pages.map((page) => (
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
+              ))}
+            </Box>
           </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -132,17 +141,17 @@ function ResponsiveAppBar() {
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'right',
+                vertical: "bottom",
+                horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
+                vertical: "top",
+                horizontal: "right",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' } }}
+              sx={{ display: { xs: "block", md: "none" } }}
               TransitionComponent={Fade}
               TransitionProps={{
                 timeout: 300,
@@ -150,7 +159,7 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
