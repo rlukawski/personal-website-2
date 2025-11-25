@@ -7,13 +7,72 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import Fade from '@mui/material/Fade';
 import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = ['Products', 'Pricing', 'Blog'];
+
+interface AnimatedHamburgerProps {
+  isOpen: boolean;
+}
+
+function AnimatedHamburger({ isOpen }: AnimatedHamburgerProps) {
+  return (
+    <Box
+      sx={{
+        width: 24,
+        height: 18,
+        position: 'relative',
+      }}
+    >
+      <Box
+        sx={{
+          position: 'absolute',
+          top: isOpen ? '50%' : 0,
+          left: 0,
+          width: '100%',
+          height: 2,
+          backgroundColor: 'currentColor',
+          borderRadius: 1,
+          transition: 'all 0.3s ease-in-out',
+          transformOrigin: 'center',
+          transform: isOpen ? 'translateY(-50%) rotate(45deg)' : 'none',
+        }}
+      />
+      <Box
+        sx={{
+          position: 'absolute',
+          top: '50%',
+          left: 0,
+          width: '100%',
+          height: 2,
+          backgroundColor: 'currentColor',
+          borderRadius: 1,
+          transition: 'all 0.3s ease-in-out',
+          opacity: isOpen ? 0 : 1,
+          transform: 'translateY(-50%)',
+        }}
+      />
+      <Box
+        sx={{
+          position: 'absolute',
+          top: isOpen ? '50%' : '100%',
+          left: 0,
+          width: '100%',
+          height: 2,
+          backgroundColor: 'currentColor',
+          borderRadius: 1,
+          transition: 'all 0.3s ease-in-out',
+          transformOrigin: 'center',
+          transform: isOpen ? 'translateY(-50%) rotate(-45deg)' : 'translateY(-100%)',
+        }}
+      />
+    </Box>
+  );
+}
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -88,7 +147,7 @@ function ResponsiveAppBar() {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <AnimatedHamburger isOpen={Boolean(anchorElNav)} />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -105,6 +164,10 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: 'block', md: 'none' } }}
+              TransitionComponent={Fade}
+              TransitionProps={{
+                timeout: 300,
+              }}
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
