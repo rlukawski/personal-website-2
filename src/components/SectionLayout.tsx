@@ -43,7 +43,7 @@ export function SectionLayout({ title, children, subtitle }: SectionLayoutProps)
               fontWeight: 700,
               letterSpacing: ".2rem",
               color: grey[800],
-              mb: 3,
+              mb: 1,
             }}
           >
             {title}
