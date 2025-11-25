@@ -229,9 +229,9 @@ function HeaderSection() {
               width: { xs: 200, md: 256 },
               height: { xs: 200, md: 256 },
               position: "relative",
-              borderRadius: 4,
               overflow: "hidden",
               flexShrink: 0,
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.25)",
             }}
           >
             <Image
