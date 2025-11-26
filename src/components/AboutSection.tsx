@@ -4,7 +4,7 @@ import { SectionLayout } from "./SectionLayout";
 
 export function AboutSection() {
   return (
-    <SectionLayout title="About">
+    <SectionLayout title="About" id="about">
       <Typography
         variant="body1"
         paragraph

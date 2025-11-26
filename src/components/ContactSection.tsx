@@ -40,7 +40,7 @@ export function ContactSection() {
   };
 
   return (
-    <SectionLayout title="Contact">
+    <SectionLayout title="Contact" id="contact">
       <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" }, gap: 8 }}>
         {/* Contact Information */}
         <Box>

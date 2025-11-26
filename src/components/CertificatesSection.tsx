@@ -25,7 +25,7 @@ const certificatesData = [
 
 export function CertificatesSection() {
   return (
-    <SectionLayout title="Certificates">
+    <SectionLayout title="Certificates" id="certificates">
       <Box sx={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 4, alignItems: "start" }}>
         {certificatesData.map((cert, index) => (
           <React.Fragment key={index}>

@@ -11,14 +11,17 @@ interface SectionLayoutProps {
   subtitle?: string;
 }
 
-export function SectionLayout({ title, children, subtitle }: SectionLayoutProps) {
+export function SectionLayout({ title, children, subtitle, id }: SectionLayoutProps & { id?: string }) {
   return (
     <Box
+      id={id}
+      component="section"
       sx={{
         width: "100%",
         py: { xs: 4, md: 6 },
         display: "flex",
         justifyContent: "center",
+        scrollMarginTop: "64px",
       }}
     >
       <Container maxWidth="xl" sx={{ paddingX: 0 }}>
