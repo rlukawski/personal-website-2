@@ -33,7 +33,7 @@ export async function generateMetadata({
   
   // Image dimensions per locale
   const imageConfig = {
-    en: { width: 744, height: 492 },
+    en: { width: 992, height: 469 },
     pl: { width: 990, height: 486 },
   };
   
