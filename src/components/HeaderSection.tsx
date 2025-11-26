@@ -7,6 +7,7 @@ import Image from "next/image";
 export function HeaderSection() {
   return (
     <Box
+      id="top"
       sx={{
         width: "100%",
         py: { xs: 4, md: 6 },

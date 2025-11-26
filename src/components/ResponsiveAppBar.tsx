@@ -12,13 +12,20 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { grey } from "@mui/material/colors";
 import { AnimatedHamburger, TRANSITION_TIMEOUT } from "./AnimatedHamburger";
+import { useScrollSpy, scrollToSection } from "@/hooks/useScrollSpy";
 
-const pages = ["About", "Projects", "Certificates", "Contact"];
+const pages = [
+  { label: "ABOUT", id: "about" },
+  { label: "PROJECTS", id: "projects" },
+  { label: "CERTIFICATES", id: "certificates" },
+  { label: "CONTACT", id: "contact" },
+];
 
 export function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
+  const activeSection = useScrollSpy(pages.map((page) => page.id));
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -26,6 +33,11 @@ export function ResponsiveAppBar() {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const handleNavClick = (id: string) => {
+    handleCloseNavMenu();
+    scrollToSection(id);
   };
 
   return (
@@ -46,7 +58,11 @@ export function ResponsiveAppBar() {
               variant="h6"
               noWrap
               component="a"
-              href="#app-bar-with-responsive-menu"
+              onClick={() => {
+                scrollToSection("top");
+                // Remove hash from URL
+                history.pushState("", document.title, window.location.pathname + window.location.search);
+              }}
               sx={{
                 mr: 2,
                 display: "flex",
@@ -56,6 +72,7 @@ export function ResponsiveAppBar() {
                 letterSpacing: ".3rem",
                 textDecoration: "none",
                 color: grey[800],
+                cursor: "pointer",
               }}
             >
               Rafał Łukawski
@@ -63,11 +80,44 @@ export function ResponsiveAppBar() {
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
                 <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ color: grey[800], display: "block" }}
+                  key={page.id}
+                  onClick={() => handleNavClick(page.id)}
+                  sx={{
+                    color: activeSection === page.id ? "black" : grey[800],
+                    display: "block",
+                    textTransform: "uppercase",
+                  }}
                 >
-                  {page}
+                  <Box component="span" sx={{ display: "block", position: "relative", height: "1.5em" }}>
+                    {/* Hidden bold text to reserve space */}
+                    <Box
+                      component="span"
+                      sx={{
+                        fontWeight: 700,
+                        visibility: "hidden",
+                        display: "block",
+                      }}
+                    >
+                      {page.label}
+                    </Box>
+                    {/* Visible text overlaid */}
+                    <Box
+                      component="span"
+                      sx={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontWeight: activeSection === page.id ? 700 : 500,
+                      }}
+                    >
+                      {page.label}
+                    </Box>
+                  </Box>
                 </Button>
               ))}
             </Box>
@@ -101,8 +151,10 @@ export function ResponsiveAppBar() {
               transitionDuration={TRANSITION_TIMEOUT}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: "center" }}>{page}</Typography>
+                <MenuItem key={page.id} onClick={() => handleNavClick(page.id)}>
+                  <Typography sx={{ textAlign: "center", fontWeight: activeSection === page.id ? 700 : 500 }}>
+                    {page.label}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -112,4 +164,3 @@ export function ResponsiveAppBar() {
     </AppBar>
   );
 }
-
