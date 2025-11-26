@@ -404,28 +404,20 @@ export function ProjectsSection() {
                     }}
                   >
                     <Box
+                      component="img"
+                      key={selectedScreenshotIndex}
+                      src={selectedScreenshot.src}
+                      alt={selectedScreenshot.alt}
                       sx={{
-                        width: "100%",
                         maxWidth: "100%",
+                        maxHeight: "70vh",
+                        width: "auto",
+                        height: "auto",
                         borderRadius: 2,
-                        overflow: "hidden",
-                        position: "relative",
+                        display: "block",
+                        objectFit: "contain",
                       }}
-                    >
-                      <Image
-                        key={selectedScreenshotIndex}
-                        src={selectedScreenshot.src}
-                        alt={selectedScreenshot.alt}
-                        width={1200}
-                        height={800}
-                        style={{
-                          width: "100%",
-                          height: "auto",
-                          display: "block",
-                        }}
-                        unoptimized
-                      />
-                    </Box>
+                    />
 
                     {/* Source */}
                     {selectedScreenshot.sourceUrl && (
