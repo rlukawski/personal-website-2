@@ -175,7 +175,7 @@ export function ProjectsSection() {
       : null;
 
   return (
-    <SectionLayout title="Projects" subtitle="Latest projects" id="projects">
+    <SectionLayout title="Latest Projects" id="projects">
       <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
             {projects.map((project, index) => (
               <Box

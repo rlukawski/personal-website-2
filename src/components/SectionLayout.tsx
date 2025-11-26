@@ -41,7 +41,7 @@ export function SectionLayout({ title, children, subtitle, id }: SectionLayoutPr
             variant="h4"
             component="h2"
             sx={{
-              mb: 1,
+              mb: 3
             }}
           >
             {title}
