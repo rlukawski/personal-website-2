@@ -7,13 +7,14 @@ import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
 import { grey } from "@mui/material/colors";
 import { FaArrowUp, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { scrollToSection } from "@/hooks/useScrollSpy";
 
 const sitemapItems = [
-  { label: "Home", id: "#hero" },
-  { label: "About", id: "#about" },
-  { label: "Projects", id: "#projects" },
-  { label: "Certificates", id: "#certificates" },
-  { label: "Contact", id: "#contact" },
+  { label: "Home", id: "hero" },
+  { label: "About", id: "about" },
+  { label: "Projects", id: "projects" },
+  { label: "Certificates", id: "certificates" },
+  { label: "Contact", id: "contact" },
 ];
 
 const socialLinks = [
@@ -39,7 +40,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollToSection("hero");
   };
 
   return (
@@ -96,14 +97,12 @@ export function Footer() {
               {sitemapItems.map((item) => (
                 <Box component="li" key={item.label}>
                   <Link
-                    href={item.id}
+                    href={`#${item.id}`}
                     underline="hover"
                     sx={{ color: grey[700], fontSize: "0.875rem", cursor: "pointer" }}
                     onClick={(e) => {
-                      if (item.id === "#hero") {
-                        e.preventDefault();
-                        scrollToTop();
-                      }
+                      e.preventDefault();
+                      scrollToSection(item.id);
                     }}
                   >
                     {item.label}
