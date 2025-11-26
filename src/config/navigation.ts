@@ -2,6 +2,7 @@ export interface Section {
   label: string;
   id: string;
   showInHeader: boolean;
+  isCta?: boolean;
 }
 
 export const sections: Section[] = [
@@ -9,6 +10,6 @@ export const sections: Section[] = [
   { label: "About", id: "about", showInHeader: true },
   { label: "Projects", id: "projects", showInHeader: true },
   { label: "Certificates", id: "certificates", showInHeader: true },
-  { label: "Contact", id: "contact", showInHeader: true },
+  { label: "Contact", id: "contact", showInHeader: true, isCta: true },
 ];
 

@@ -69,18 +69,36 @@ export function ResponsiveAppBar() {
             >
               Rafał Łukawski
             </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, gap: 1 }}>
               {navItems.map((page) => (
                 <Button
                   key={page.id}
                   onClick={() => handleNavClick(page.id)}
                   sx={{
-                    color: activeSection === page.id ? "black" : grey[800],
+                    color: activeSection === page.id
+                      ? "black"
+                      : grey[800],
                     display: "block",
                     textTransform: "uppercase",
+                    backgroundColor: page.isCta ? grey[200] : "transparent",
+                    px: 1,
+                    py: page.isCta ? 1 : "6px",
+                    borderRadius: page.isCta ? 2 : 0,
+                    ml: page.isCta ? 1 : 0,
+                    transition: "all 0.2s ease-in-out",
+                    "&:hover": {
+                      backgroundColor: page.isCta ? grey[300] : undefined,
+                    },
                   }}
                 >
-                  <Box component="span" sx={{ display: "block", position: "relative", height: "1.5em" }}>
+                  <Box
+                    component="span"
+                    sx={{
+                      display: "block",
+                      position: "relative",
+                      height: "1.5em",
+                    }}
+                  >
                     {/* Hidden bold text to reserve space */}
                     <Box
                       component="span"
@@ -143,8 +161,27 @@ export function ResponsiveAppBar() {
               transitionDuration={TRANSITION_TIMEOUT}
             >
               {navItems.map((page) => (
-                <MenuItem key={page.id} onClick={() => handleNavClick(page.id)}>
-                  <Typography sx={{ textAlign: "center", fontWeight: activeSection === page.id ? 700 : 500 }}>
+                <MenuItem
+                  key={page.id}
+                  onClick={() => handleNavClick(page.id)}
+                  sx={{
+                    backgroundColor: page.isCta ? grey[200] : "transparent",
+                    color: "inherit",
+                    "&:hover": {
+                      backgroundColor: page.isCta ? grey[300] : undefined,
+                    },
+                    my: page.isCta ? 1 : 0,
+                    borderRadius: page.isCta ? 1 : 0,
+                    justifyContent: "center",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      textAlign: "center",
+                      fontWeight: activeSection === page.id ? 700 : 500,
+                      color: "inherit",
+                    }}
+                  >
                     {page.label.toUpperCase()}
                   </Typography>
                 </MenuItem>
