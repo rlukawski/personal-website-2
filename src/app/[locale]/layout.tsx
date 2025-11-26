@@ -21,10 +21,41 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Rafał Łukawski - Software Developer and IT Project Manager",
-  description: "Full-stack developer with 5+ years of modern frontend/backend experience. Google Cloud Professional Architect | Professional Scrum Master",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  
+  return {
+    title: "Rafał Łukawski - Software Developer and IT Project Manager",
+    description: "Full-stack developer with 5+ years of modern frontend/backend experience. Google Cloud Professional Architect | Professional Scrum Master",
+    
+    // This sets the proper hreflang and canonical tags
+    alternates: {
+      canonical: `${baseUrl}/${locale}`,
+      languages: {
+        'en': `${baseUrl}/en`,
+        'pl': `${baseUrl}/pl`,
+        'x-default': `${baseUrl}/en`, // Default for unmatched languages
+      },
+    },
+    
+    // Open Graph for social media
+    openGraph: {
+      title: "Rafał Łukawski - Software Developer and IT Project Manager",
+      description: "Full-stack developer with 5+ years of modern frontend/backend experience. Google Cloud Professional Architect | Professional Scrum Master",
+      locale: locale === 'pl' ? 'pl_PL' : 'en_US',
+      alternateLocale: locale === 'pl' ? ['en_US'] : ['pl_PL'],
+      url: `${baseUrl}/${locale}`,
+      siteName: "Rafał Łukawski Portfolio",
+      type: 'website',
+    },
+  };
+}
 
 export default async function LocaleLayout({
   children,
