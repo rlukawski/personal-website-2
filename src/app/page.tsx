@@ -7,6 +7,7 @@ import { HeaderSection } from "@/components/HeaderSection";
 import { AboutSection } from "@/components/AboutSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { CertificatesSection } from "@/components/CertificatesSection";
+import { ContactSection } from "@/components/ContactSection";
 
 export default function Page() {
   return (
@@ -16,6 +17,7 @@ export default function Page() {
       <AboutSection />
       <ProjectsSection />
       <CertificatesSection />
+      <ContactSection />
     </Container>
   );
 }
