@@ -8,7 +8,6 @@ export function AboutSection() {
         variant="body1"
         paragraph
         sx={{
-          fontSize: { xs: "1rem", md: "1.1rem" },
           mb: 3,
         }}
       >
@@ -20,9 +19,6 @@ export function AboutSection() {
       </Typography>
       <Typography
         variant="body1"
-        sx={{
-          fontSize: { xs: "1rem", md: "1.1rem" },
-        }}
       >
         Google Cloud Professional Architect (2024) | Professional Scrum
         Master | Built systems for millions of users at Onet.pl | Led

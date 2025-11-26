@@ -222,7 +222,6 @@ export function ProjectsSection() {
                     variant="body2"
                     sx={{
                       mb: 1,
-                      fontSize: { xs: "0.85rem", md: "0.9rem" },
                     }}
                   >
                     {project.dateRange}
@@ -233,7 +232,6 @@ export function ProjectsSection() {
                       sx={{
                         color: grey[700],
                         mb: 2,
-                        fontSize: { xs: "0.85rem", md: "0.9rem" },
                       }}
                     >
                       <Box component="span" sx={{ fontWeight: 600 }}>
@@ -261,9 +259,6 @@ export function ProjectsSection() {
                   )}
                   <Typography
                     variant="body1"
-                    sx={{
-                      fontSize: { xs: "1rem", md: "1.1rem" },
-                    }}
                   >
                     {project.description}
                   </Typography>

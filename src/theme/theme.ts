@@ -12,6 +12,10 @@ let theme = createTheme({
       secondary: grey[700],
     },
   },
+});
+
+// Now we can reference theme.breakpoints
+theme = createTheme(theme, {
   typography: {
     fontFamily: "var(--font-geist-sans), Arial, sans-serif",
     h3: {
@@ -38,9 +42,17 @@ let theme = createTheme({
     body1: {
       color: grey[700],
       lineHeight: 1.8,
+      fontSize: "1rem",
+      [theme.breakpoints.up("md")]: {
+        fontSize: "1gi.1rem",
+      },
     },
     body2: {
       color: grey[600],
+      fontSize: "0.85rem",
+      [theme.breakpoints.up("md")]: {
+        fontSize: "0.9rem",
+      },
     },
     button: {
       textTransform: "none",
