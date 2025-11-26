@@ -194,6 +194,9 @@ export function ProjectsSection() {
                     <Typography
                       variant="h5"
                       component="h3"
+                      sx={{
+                        lineHeight: 1.2
+                      }}
                     >
                       {project.title}
                     </Typography>
@@ -221,7 +224,7 @@ export function ProjectsSection() {
                   <Typography
                     variant="body1"
                     sx={{
-                      mb: 0.5,
+                      // mb: 0.5,
                     }}
                   >
                     {project.dateRange}
