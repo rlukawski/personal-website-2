@@ -91,14 +91,15 @@ export function Footer() {
                 <Box component="li" key={item.label}>
                   <Link
                     href={`#${item.id}`}
+                    variant="footerLink"
                     underline="hover"
-                    sx={{ color: grey[700], fontSize: "0.875rem", cursor: "pointer" }}
+                    sx={{ cursor: "pointer" }}
                     onClick={(e) => {
                       e.preventDefault();
                       scrollToSection(item.id);
                     }}
                   >
-                    {item.label}
+                    <Typography variant="footerLink">{item.label}</Typography>
                   </Link>
                 </Box>
               ))}
@@ -120,16 +121,15 @@ export function Footer() {
                       target={social.url.startsWith("mailto:") ? undefined : "_blank"}
                       rel={social.url.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                       underline="hover"
+                      color="inherit"
                       sx={{
-                        color: grey[700],
-                        fontSize: "0.875rem",
                         display: "flex",
                         alignItems: "center",
                         gap: 1,
                       }}
                     >
                       <Icon />
-                      {social.name}
+                      <Typography variant="footerLink">{social.name}</Typography>
                     </Link>
                   </Box>
                 );

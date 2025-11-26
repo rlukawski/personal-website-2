@@ -2,6 +2,24 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import { grey } from "@mui/material/colors";
 
+declare module '@mui/material/styles' {
+  interface TypographyVariants {
+    footerLink: React.CSSProperties;
+  }
+
+  // allow configuration using `createTheme`
+  interface TypographyVariantsOptions {
+    footerLink?: React.CSSProperties;
+  }
+}
+
+// Update the Typography's variant prop options
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    footerLink: true;
+  }
+}
+
 let theme = createTheme({
   palette: {
     background: {
@@ -54,6 +72,11 @@ theme = createTheme(theme, {
       [theme.breakpoints.up("md")]: {
         fontSize: "1rem",
       },
+    },
+    footerLink: {
+      color: grey[700],
+      fontSize: "0.9rem",
+      lineHeight: 1.5,
     },
     button: {
       textTransform: "none",
