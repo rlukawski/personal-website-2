@@ -71,7 +71,7 @@ export function HeroSection() {
                   fontWeight: 600,
                 }}
               >
-                Let's build products that matter!
+                Let&apos;s build products that matter!
               </Typography>
             </Box>
           </Box>

@@ -1,7 +1,16 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 export const useScrollSpy = (navItems: string[]) => {
-  const [currentSection, setCurrentSection] = useState<string>("");
+  // Initialize state lazily to avoid setting it in useEffect
+  const [currentSection, setCurrentSection] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      const initialHash = window.location.hash.slice(1);
+      if (initialHash && navItems.includes(initialHash)) {
+        return initialHash;
+      }
+    }
+    return "";
+  });
 
   useEffect(() => {
     const sectionVisibility = new Map<string, number>();
@@ -57,14 +66,6 @@ export const useScrollSpy = (navItems: string[]) => {
       const element = document.getElementById(id);
       if (element) observer.observe(element);
     });
-
-    // Set initial section from hash
-    if (typeof window !== "undefined") {
-      const initialHash = window.location.hash.slice(1);
-      if (initialHash && navItems.includes(initialHash)) {
-        setCurrentSection(initialHash);
-      }
-    }
 
     return () => observer.disconnect();
   }, [navItems]);
