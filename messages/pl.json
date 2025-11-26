@@ -15,7 +15,7 @@
   },
   "about": {
     "title": "O mnie",
-    "paragraph1": "Cześć, nazywam się Rafał Łukawski. Jestem full-stack developerem z ponad 5-letnim doświadczeniem w nowoczesnym frontend/backend oraz ponad 20-letnim stażem w IT. Pasjonuję się całym cyklem życia oprogramowania—od architektury systemu, przez implementację, aż po wdrożenie produkcyjne.",
+    "paragraph1": "Cześć, nazywam się Rafał Łukawski. Jestem full-stack developerem z ponad 5-letnim doświadczeniem w nowoczesnym frontend/backend oraz ponad 20-letnim stażem w IT. Pasjonuję się pełnym cyklem życia oprogramowania—od architektury systemu, przez implementację, aż po wdrożenie produkcyjne.",
     "paragraph2": "Google Cloud Professional Architect (2024) | Professional Scrum Master | Budowałem systemy dla milionów użytkowników w Onet.pl | Prowadziłem projekty telekomunikacyjne w TP.SA | Obecnie rozwijam zaawansowane aplikacje React/Next.js i mentoruję programistów."
   },
   "technologies": {
