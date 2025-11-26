@@ -8,7 +8,6 @@ import { useTranslations } from "next-intl";
 
 interface TechItem {
   name: string;
-  years?: string;
 }
 
 interface TechCategory {
@@ -23,56 +22,56 @@ export function TechnologiesSection() {
     {
       title: t("frontend"),
       items: [
-        { name: "React", years: "5+" },
-        { name: "TypeScript", years: "5+" },
-        { name: "Next.js", years: "3+" },
-        { name: "Angular", years: "2+" },
+        { name: "React" },
+        { name: "TypeScript" },
+        { name: "Next.js" },
+        { name: "Angular" },
       ],
     },
     {
       title: t("stateManagement"),
       items: [
-        { name: "Redux Toolkit", years: "3+" },
-        { name: "Zustand", years: "2+" },
+        { name: "Redux Toolkit" },
+        { name: "Zustand" },
       ],
     },
     {
       title: t("uiLibraries"),
       items: [
-        { name: "Chakra-UI", years: "4+" },
-        { name: "Material-UI", years: "1+" },
-        { name: "Tailwind CSS", years: "1+" },
+        { name: "Chakra-UI" },
+        { name: "Material-UI" },
+        { name: "Tailwind CSS" },
       ],
     },
     {
       title: t("testing"),
       items: [
-        { name: "Cypress", years: "3+" },
-        { name: "Jest", years: "3+" },
+        { name: "Cypress" },
+        { name: "Jest" },
       ],
     },
     {
       title: t("backend"),
       items: [
-        { name: "Node.js", years: "1+" },
-        { name: "Express", years: "1+" },
-        { name: "PostgreSQL", years: "1+" },
-        { name: "MySQL", years: "5+" },
+        { name: "Node.js" },
+        { name: "Express" },
+        { name: "PostgreSQL" },
+        { name: "MySQL" },
       ],
     },
     {
       title: t("cloudDevops"),
       items: [
-        { name: "Git", years: "4+" },
-        { name: "GCP", years: "3+" },
-        { name: "Docker + Swarm", years: "3+" },
-        { name: "CI/CD", years: "3+" },
+        { name: "Git" },
+        { name: "GCP" },
+        { name: "Docker + Swarm" },
+        { name: "CI/CD" },
       ],
     },
     {
       title: t("methodologies"),
       items: [
-        { name: "Agile/Scrum", years: "6+" },
+        { name: "Agile/Scrum" },
       ],
     },
   ];
@@ -112,9 +111,7 @@ export function TechnologiesSection() {
               {category.items.map((item) => (
                 <Chip
                   key={item.name}
-                  label={
-                    item.years ? `${item.name} (${item.years})` : item.name
-                  }
+                  label={item.name}
                   sx={{
                     justifyContent: "flex-start",
                     fontSize: "0.875rem",
