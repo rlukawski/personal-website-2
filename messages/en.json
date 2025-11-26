@@ -9,7 +9,8 @@
   "hero": {
     "name": "Rafał Łukawski",
     "title": "Software Developer and IT Project Manager",
-    "tagline": "Let's build products that matter!"
+    "tagline": "Let's build products that matter!",
+    "contactMe": "Contact me"
   },
   "about": {
     "title": "About",

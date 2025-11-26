@@ -9,7 +9,8 @@
   "hero": {
     "name": "Rafał Łukawski",
     "title": "Programista i Kierownik Projektów IT",
-    "tagline": "Zbudujmy produkty, które mają znaczenie!"
+    "tagline": "Zbudujmy produkty, które mają znaczenie!",
+    "contactMe": "Skontaktuj się"
   },
   "about": {
     "title": "O mnie",

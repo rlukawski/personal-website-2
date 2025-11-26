@@ -3,12 +3,16 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
 import { grey } from "@mui/material/colors";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import { scrollToSection } from "@/hooks/useScrollSpy";
 
 export function HeroSection() {
   const t = useTranslations("hero");
+
   return (
     <Box
       id="hero"
@@ -77,6 +81,34 @@ export function HeroSection() {
               >
                 {t("tagline")}
               </Typography>
+            </Box>
+            <Box
+              sx={{
+                pl: { xs: 0, md: 2 },
+                mt: 4,
+                display: "flex",
+                justifyContent: { xs: "center", md: "flex-start" },
+              }}
+            >
+              <Button
+                variant="contained"
+                onClick={() => scrollToSection("contact")}
+                startIcon={<MailOutlineIcon />}
+                sx={{
+                  px: 3,
+                  py: 1.5,
+                  fontSize: "1rem",
+                  fontWeight: 600,
+                  textTransform: "none",
+                  borderRadius: 2,
+                  boxShadow: 3,
+                  "&:hover": {
+                    boxShadow: 4,
+                  },
+                }}
+              >
+                {t("contactMe")}
+              </Button>
             </Box>
           </Box>
           <Box
