@@ -29,7 +29,7 @@ export function SectionLayout({ title, children, subtitle, id }: SectionLayoutPr
           sx={{
             backgroundColor: 'white',
             border: `1px solid rgba(255, 255, 255, 0.3)`,
-            p: { xs: 3, md: 5 },
+            p: { xs: 3, md: 4 },
             transition: `all ${TRANSITION_TIMEOUT}ms ease`,
             boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
             "&:hover": {
