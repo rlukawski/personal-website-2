@@ -34,7 +34,7 @@ export async function generateMetadata({
   // Image dimensions per locale
   const imageConfig = {
     en: { width: 744, height: 492 },
-    pl: { width: 726, height: 490 },
+    pl: { width: 990, height: 486 },
   };
   
   const currentImageConfig = imageConfig[locale as 'en' | 'pl'] || imageConfig.en;
