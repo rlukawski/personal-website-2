@@ -31,6 +31,14 @@ export async function generateMetadata({
   
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
   
+  // Image dimensions per locale
+  const imageConfig = {
+    en: { width: 744, height: 492 },
+    pl: { width: 726, height: 490 },
+  };
+  
+  const currentImageConfig = imageConfig[locale as 'en' | 'pl'] || imageConfig.en;
+  
   return {
     title: "Rafał Łukawski - Software Developer and IT Project Manager",
     description: "Full-stack developer with 5+ years of modern frontend/backend experience and 20+ years of experience in IT. Google Cloud Professional Architect | Professional Scrum Master",
@@ -55,6 +63,22 @@ export async function generateMetadata({
       url: `${baseUrl}/${locale}`,
       siteName: "Rafał Łukawski Portfolio",
       type: 'website',
+      images: [
+        {
+          url: `${baseUrl}/preview_${locale}.png`,
+          width: currentImageConfig.width,
+          height: currentImageConfig.height,
+          alt: 'Rafał Łukawski - Software Developer and IT Project Manager',
+        },
+      ],
+    },
+    
+    // Twitter Card for better Twitter/X sharing
+    twitter: {
+      card: 'summary_large_image',
+      title: "Rafał Łukawski - Software Developer and IT Project Manager",
+      description: "Full-stack developer with 5+ years of modern frontend/backend experience. Google Cloud Professional Architect | Professional Scrum Master",
+      images: [`${baseUrl}/preview_${locale}.png`],
     },
   };
 }
