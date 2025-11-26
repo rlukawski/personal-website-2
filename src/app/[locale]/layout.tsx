@@ -33,7 +33,7 @@ export async function generateMetadata({
   
   return {
     title: "Rafał Łukawski - Software Developer and IT Project Manager",
-    description: "Full-stack developer with 5+ years of modern frontend/backend experience. Google Cloud Professional Architect | Professional Scrum Master",
+    description: "Full-stack developer with 5+ years of modern frontend/backend experience and 20+ years of experience in IT. Google Cloud Professional Architect | Professional Scrum Master",
     
     // This sets the proper hreflang and canonical tags
     alternates: {
