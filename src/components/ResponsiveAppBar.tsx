@@ -68,10 +68,8 @@ export function ResponsiveAppBar() {
                 display: "flex",
                 flexGrow: { xs: 1, md: 0 },
                 fontFamily: "monospace",
-                fontWeight: 700,
                 letterSpacing: ".3rem",
                 textDecoration: "none",
-                color: grey[800],
                 cursor: "pointer",
               }}
             >

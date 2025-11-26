@@ -194,11 +194,6 @@ export function ProjectsSection() {
                     <Typography
                       variant="h5"
                       component="h3"
-                      sx={{
-                        fontFamily: "monospace",
-                        fontWeight: 600,
-                        color: grey[800],
-                      }}
                     >
                       {project.title}
                     </Typography>
@@ -226,7 +221,6 @@ export function ProjectsSection() {
                   <Typography
                     variant="body2"
                     sx={{
-                      color: grey[600],
                       mb: 1,
                       fontSize: { xs: "0.85rem", md: "0.9rem" },
                     }}
@@ -268,8 +262,6 @@ export function ProjectsSection() {
                   <Typography
                     variant="body1"
                     sx={{
-                      color: grey[700],
-                      lineHeight: 1.8,
                       fontSize: { xs: "1rem", md: "1.1rem" },
                     }}
                   >
@@ -427,7 +419,6 @@ export function ProjectsSection() {
                           mt: 2,
                           textAlign: "right",
                           width: "100%",
-                          color: grey[600],
                           fontSize: "0.85rem",
                         }}
                       >

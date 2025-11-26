@@ -65,7 +65,7 @@ export function Footer() {
         >
           {/* Call to Action Section */}
           <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 2 }}>
-            <Typography variant="h4" component="h3" sx={{ fontWeight: 700, color: grey[800] }}>
+            <Typography variant="h4" component="h3">
               Let&apos;s build <Box component="span" sx={{ color: grey[500] }}>something together!</Box>
             </Typography>
             <Button
@@ -89,7 +89,7 @@ export function Footer() {
 
           {/* Sitemap Section */}
           <Box>
-            <Typography variant="h6" component="h4" sx={{ mb: 2, fontWeight: 600, color: grey[800] }}>
+            <Typography variant="h6" component="h4" sx={{ mb: 2 }}>
               Sitemap
             </Typography>
             <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0, display: "flex", flexDirection: "column", gap: 1 }}>
@@ -115,7 +115,7 @@ export function Footer() {
 
           {/* Socials Section */}
           <Box>
-            <Typography variant="h6" component="h4" sx={{ mb: 2, fontWeight: 600, color: grey[800] }}>
+            <Typography variant="h6" component="h4" sx={{ mb: 2 }}>
               Socials
             </Typography>
             <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0, display: "flex", flexDirection: "column", gap: 1 }}>
@@ -148,7 +148,7 @@ export function Footer() {
 
         {/* Copyright */}
         <Box sx={{ display: "flex", justifyContent: "flex-end", pt: 2 }}>
-          <Typography variant="body2" sx={{ color: grey[600] }}>
+          <Typography variant="body2">
             © {currentYear} Rafał Łukawski
           </Typography>
         </Box>

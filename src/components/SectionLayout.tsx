@@ -41,10 +41,6 @@ export function SectionLayout({ title, children, subtitle, id }: SectionLayoutPr
             variant="h4"
             component="h2"
             sx={{
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".2rem",
-              color: grey[800],
               mb: 1,
             }}
           >
@@ -54,7 +50,6 @@ export function SectionLayout({ title, children, subtitle, id }: SectionLayoutPr
             <Typography
               variant="body2"
               sx={{
-                color: grey[600],
                 mb: 4,
                 fontSize: { xs: "0.9rem", md: "1rem" },
               }}

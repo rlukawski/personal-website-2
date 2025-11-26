@@ -44,7 +44,7 @@ export function ContactSection() {
       <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" }, gap: 8 }}>
         {/* Contact Information */}
         <Box>
-          <Typography variant="h6" component="h3" sx={{ mb: 3, fontWeight: 600, color: grey[800] }}>
+          <Typography variant="h6" component="h3" sx={{ mb: 3 }}>
             Get in Touch
           </Typography>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
@@ -87,7 +87,7 @@ export function ContactSection() {
 
         {/* Contact Form */}
         <Box>
-          <Typography variant="h6" component="h3" sx={{ mb: 3, fontWeight: 600, color: grey[800] }}>
+          <Typography variant="h6" component="h3" sx={{ mb: 3 }}>
             Send a Message
           </Typography>
           <form onSubmit={handleSubmit}>

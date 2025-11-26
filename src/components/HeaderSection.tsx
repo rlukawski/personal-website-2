@@ -29,10 +29,6 @@ export function HeaderSection() {
               variant="h3"
               component="h1"
               sx={{
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".2rem",
-                color: grey[800],
                 mb: 1,
               }}
             >
