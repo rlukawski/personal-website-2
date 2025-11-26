@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Chip from "@mui/material/Chip";
 import { SectionLayout } from "./SectionLayout";
 import { useTranslations } from "next-intl";
+import { grey } from "@mui/material/colors";
 
 interface TechItem {
   name: string;
@@ -115,6 +116,7 @@ export function TechnologiesSection() {
                   sx={{
                     justifyContent: "flex-start",
                     fontSize: "0.875rem",
+                    backgroundColor: grey[100],
                   }}
                 />
               ))}
