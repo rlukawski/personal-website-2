@@ -63,59 +63,62 @@ export function Footer() {
             </Button>
           </Box>
 
-          {/* Sitemap Section */}
-          <Box>
-            <Typography variant="h6" component="h4" sx={{ mb: 2 }}>
-              Sitemap
-            </Typography>
-            <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0, display: "flex", flexDirection: "column", gap: 1 }}>
-              {sections.map((item) => (
-                <Box component="li" key={item.label}>
-                  <Link
-                    href={`#${item.id}`}
-                    variant="footerLink"
-                    underline="hover"
-                    sx={{ cursor: "pointer" }}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection(item.id);
-                    }}
-                  >
-                    <Typography variant="footerLink">{item.label}</Typography>
-                  </Link>
-                </Box>
-              ))}
-            </Box>
-          </Box>
-
-          {/* Socials Section */}
-          <Box>
-            <Typography variant="h6" component="h4" sx={{ mb: 2 }}>
-              Socials
-            </Typography>
-            <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0, display: "flex", flexDirection: "column", gap: 1 }}>
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <Box component="li" key={social.name}>
+          {/* Links Group */}
+          <Box sx={{ display: "flex", gap: { xs: 6, md: 10 } }}>
+            {/* Sitemap Section */}
+            <Box>
+              <Typography variant="h6" component="h4" sx={{ mb: 2 }}>
+                Sitemap
+              </Typography>
+              <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0, display: "flex", flexDirection: "column", gap: 1 }}>
+                {sections.map((item) => (
+                  <Box component="li" key={item.label}>
                     <Link
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={`#${item.id}`}
+                      variant="footerLink"
                       underline="hover"
-                      color="inherit"
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 1,
+                      sx={{ cursor: "pointer" }}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection(item.id);
                       }}
                     >
-                      <Icon />
-                      <Typography variant="footerLink">{social.name}</Typography>
+                      <Typography variant="footerLink">{item.label}</Typography>
                     </Link>
                   </Box>
-                );
-              })}
+                ))}
+              </Box>
+            </Box>
+
+            {/* Socials Section */}
+            <Box>
+              <Typography variant="h6" component="h4" sx={{ mb: 2 }}>
+                Socials
+              </Typography>
+              <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0, display: "flex", flexDirection: "column", gap: 1 }}>
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <Box component="li" key={social.name}>
+                      <Link
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        underline="hover"
+                        color="inherit"
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 1,
+                        }}
+                      >
+                        <Icon />
+                        <Typography variant="footerLink">{social.name}</Typography>
+                      </Link>
+                    </Box>
+                  );
+                })}
+              </Box>
             </Box>
           </Box>
         </Box>
