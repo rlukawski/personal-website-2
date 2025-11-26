@@ -23,6 +23,13 @@ const certificatesData = [
   },
 ];
 
+
+const formatDate = (dateStr: string) => {
+  const [year, month] = dateStr.split(".");
+  const date = new Date(parseInt(year), parseInt(month) - 1);
+  return date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+};
+
 export function CertificatesSection() {
   return (
     <SectionLayout title="Certificates" id="certificates">
@@ -30,9 +37,9 @@ export function CertificatesSection() {
         {certificatesData.map((cert, index) => (
           <React.Fragment key={index}>
             {/* Date Column */}
-            <Box sx={{ display: "flex", alignItems: "center", pt: 1 }}>
+            <Box sx={{ display: "flex", justifyContent: "flex-end", alignItems: "center", pt: 1, minWidth: 120 }}>
               <Typography variant="body2" sx={{ color: grey[700] }}>
-                {cert.date}
+                {formatDate(cert.date)}
               </Typography>
             </Box>
             
