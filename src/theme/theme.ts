@@ -41,17 +41,18 @@ theme = createTheme(theme, {
     },
     body1: {
       color: grey[700],
-      lineHeight: 1.8,
+      lineHeight: 1.4,
       fontSize: "1rem",
       [theme.breakpoints.up("md")]: {
-        fontSize: "1gi.1rem",
+        fontSize: "1.1rem",
       },
     },
     body2: {
       color: grey[600],
-      fontSize: "0.85rem",
+      fontSize: "0.9rem",
+      lineHeight: 1.4,
       [theme.breakpoints.up("md")]: {
-        fontSize: "0.9rem",
+        fontSize: "1rem",
       },
     },
     button: {

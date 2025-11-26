@@ -190,7 +190,7 @@ export function ProjectsSection() {
               >
                 {/* Left side: Project info */}
                 <Box sx={{ display: "flex", flexDirection: "column" }}>
-                  <Box sx={{ display: "flex", alignItems: "flex-start", gap: 1, mb: 1 }}>
+                  <Box sx={{ display: "flex", alignItems: "flex-start", gap: 1, mb: 0.5 }}>
                     <Typography
                       variant="h5"
                       component="h3"
@@ -219,9 +219,9 @@ export function ProjectsSection() {
                     )}
                   </Box>
                   <Typography
-                    variant="body2"
+                    variant="body1"
                     sx={{
-                      mb: 1,
+                      mb: 0.5,
                     }}
                   >
                     {project.dateRange}
@@ -258,7 +258,7 @@ export function ProjectsSection() {
                     </Typography>
                   )}
                   <Typography
-                    variant="body1"
+                    variant="body2"
                   >
                     {project.description}
                   </Typography>
