@@ -283,7 +283,7 @@ export function ProjectsSection() {
                     sx={{
                       display: "flex",
                       alignItems: "center",
-                      justifyContent: { xs: "flex-start", md: "center" },
+                      justifyContent: "center",
                     }}
                   >
                     <Box
@@ -291,7 +291,7 @@ export function ProjectsSection() {
                       onClick={() => handleScreenshotClick(project.id, 0)}
                       sx={{
                         position: "relative",
-                        width: { xs: 180, md: 200 },
+                        width: { xs: 220, md: 300 },
                         height: "auto",
                         cursor: "pointer",
                         border: `2px solid ${grey[300]}`,
@@ -299,6 +299,7 @@ export function ProjectsSection() {
                         overflow: "hidden",
                         backgroundColor: grey[50],
                         p: 0.5,
+                        // border: '1px solid red',
                         transition: "all 0.2s ease",
                         "&:hover": {
                           borderColor: grey[400],
@@ -310,8 +311,8 @@ export function ProjectsSection() {
                       <Image
                         src={project.screenshots[0].src}
                         alt={project.screenshots[0].alt}
-                        width={200}
-                        height={150}
+                        width={400}
+                        height={300}
                         style={{
                           width: "100%",
                           height: "auto",
