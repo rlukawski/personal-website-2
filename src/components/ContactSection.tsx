@@ -6,8 +6,8 @@ import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
 import Alert from "@mui/material/Alert";
 import { grey } from "@mui/material/colors";
-import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 import { SectionLayout } from "./SectionLayout";
+import { socialLinks } from "@/config/socials";
 
 export function ContactSection() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -48,40 +48,24 @@ export function ContactSection() {
             Get in Touch
           </Typography>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-              <FaLinkedin size={24} color={grey[600]} />
-              <Link
-                href="https://www.linkedin.com/in/rafal-lukawski/"
-                target="_blank"
-                rel="noopener noreferrer"
-                underline="hover"
-                sx={{ color: "#1976d2", fontSize: "1rem" }}
-              >
-                LinkedIn Profile
-              </Link>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-              <FaGithub size={24} color={grey[600]} />
-              <Link
-                href="https://github.com/rlukawski"
-                target="_blank"
-                rel="noopener noreferrer"
-                underline="hover"
-                sx={{ color: "#1976d2", fontSize: "1rem" }}
-              >
-                GitHub Profile
-              </Link>
-            </Box>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-              <FaEnvelope size={24} color={grey[600]} />
-              <Link
-                href="mailto:rafal@lukawski.eu"
-                underline="hover"
-                sx={{ color: "#1976d2", fontSize: "1rem" }}
-              >
-                rafal@lukawski.eu
-              </Link>
-            </Box>
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+              
+              return (
+                <Box key={social.name} sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                  <Icon size={24} color={grey[600]} />
+                  <Link
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    underline="hover"
+                    sx={{ color: "#1976d2", fontSize: "1rem" }}
+                  >
+                    {social.name}
+                  </Link>
+                </Box>
+              );
+            })}
           </Box>
         </Box>
 

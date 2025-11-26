@@ -6,28 +6,10 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
 import { grey } from "@mui/material/colors";
-import { FaArrowUp, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa";
 import { scrollToSection } from "@/hooks/useScrollSpy";
 import { sections } from "@/config/navigation";
-
-const socialLinks = [
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/rafal-lukawski/",
-    icon: FaLinkedin,
-  },
-  {
-    name: "GitHub",
-    url: "https://github.com/rlukawski",
-    icon: FaGithub,
-    iconsize: 20,
-  },
-  {
-    name: "Email",
-    url: "mailto:rafal@lukawski.eu",
-    icon: FaEnvelope,
-  },
-];
+import { socialLinks } from "@/config/socials";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -118,8 +100,8 @@ export function Footer() {
                   <Box component="li" key={social.name}>
                     <Link
                       href={social.url}
-                      target={social.url.startsWith("mailto:") ? undefined : "_blank"}
-                      rel={social.url.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       underline="hover"
                       color="inherit"
                       sx={{
