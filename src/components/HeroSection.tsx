@@ -4,10 +4,10 @@ import Container from "@mui/material/Container";
 import { grey } from "@mui/material/colors";
 import Image from "next/image";
 
-export function HeaderSection() {
+export function HeroSection() {
   return (
     <Box
-      id="top"
+      id="hero"
       sx={{
         width: "100%",
         py: { xs: 4, md: 6 },

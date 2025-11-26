@@ -9,7 +9,7 @@ import { grey } from "@mui/material/colors";
 import { FaArrowUp, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const sitemapItems = [
-  { label: "Home", id: "#top" },
+  { label: "Home", id: "#hero" },
   { label: "About", id: "#about" },
   { label: "Projects", id: "#projects" },
   { label: "Certificates", id: "#certificates" },
@@ -100,7 +100,7 @@ export function Footer() {
                     underline="hover"
                     sx={{ color: grey[700], fontSize: "0.875rem", cursor: "pointer" }}
                     onClick={(e) => {
-                      if (item.id === "#top") {
+                      if (item.id === "#hero") {
                         e.preventDefault();
                         scrollToTop();
                       }

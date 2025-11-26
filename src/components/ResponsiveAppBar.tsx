@@ -25,7 +25,7 @@ export function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
-  const activeSection = useScrollSpy(pages.map((page) => page.id));
+  const activeSection = useScrollSpy(["hero", ...pages.map((page) => page.id)]);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -59,9 +59,7 @@ export function ResponsiveAppBar() {
               noWrap
               component="a"
               onClick={() => {
-                scrollToSection("top");
-                // Remove hash from URL
-                history.pushState("", document.title, window.location.pathname + window.location.search);
+                scrollToSection("hero");
               }}
               sx={{
                 mr: 2,
