@@ -47,7 +47,7 @@ export function ResponsiveAppBar() {
         backgroundColor: "rgba(255, 255, 255, 0.9)",
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Toolbar
           disableGutters
           sx={{ alignItems: "center", minHeight: 64, height: 64 }}

@@ -11,7 +11,7 @@ import { ContactSection } from "@/components/ContactSection";
 
 export default function Page() {
   return (
-    <Container maxWidth="xl" sx={{ paddingX: 0 }}>
+    <Container maxWidth="lg" sx={{ paddingX: 0 }}>
       <ResponsiveAppBar />
       <HeroSection />
       <AboutSection />
