@@ -1,3 +1,5 @@
+"use client";
+
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
@@ -5,6 +7,7 @@ import { grey } from "@mui/material/colors";
 import Image from "next/image";
 import { SectionLayout } from "./SectionLayout";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 const certificatesData = [
   {
@@ -31,8 +34,10 @@ const formatDate = (dateStr: string) => {
 };
 
 export function CertificatesSection() {
+  const t = useTranslations("certificates");
+  
   return (
-    <SectionLayout title="Certificates" id="certificates">
+    <SectionLayout title={t("title")} id="certificates">
       <Box sx={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: 4, alignItems: "start" }}>
         {certificatesData.map((cert, index) => (
           <React.Fragment key={index}>
@@ -79,7 +84,7 @@ export function CertificatesSection() {
                     underline="hover"
                     sx={{ color: "#1976d2", fontSize: "0.875rem" }}
                   >
-                    Show credentials
+                    {t("showCredentials")}
                   </Link>
                 )}
               </Box>

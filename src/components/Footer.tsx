@@ -10,8 +10,11 @@ import { FaArrowUp } from "react-icons/fa";
 import { scrollToSection } from "@/hooks/useScrollSpy";
 import { sections } from "@/config/navigation";
 import { socialLinks } from "@/config/socials";
+import { useTranslations } from "next-intl";
 
 export function Footer() {
+  const tNav = useTranslations("navigation");
+  const tFooter = useTranslations("footer");
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {
@@ -42,7 +45,7 @@ export function Footer() {
           {/* Call to Action Section */}
           <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 2 }}>
             <Typography variant="h4" component="h3">
-              Let&apos;s build <Box component="span" sx={{ color: grey[500] }}>something together!</Box>
+              {tFooter("cta.line1")} <Box component="span" sx={{ color: grey[500] }}>{tFooter("cta.line2")}</Box>
             </Typography>
             <Button
               variant="contained"
@@ -59,7 +62,7 @@ export function Footer() {
                 },
               }}
             >
-              Start project
+              {tFooter("cta.button")}
             </Button>
           </Box>
 
@@ -68,7 +71,7 @@ export function Footer() {
             {/* Sitemap Section */}
             <Box>
               <Typography variant="h6" component="h4" sx={{ mb: 2 }}>
-                Sitemap
+                {tFooter("sitemap")}
               </Typography>
               <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0, display: "flex", flexDirection: "column", gap: 1 }}>
                 {sections.map((item) => (
@@ -83,7 +86,7 @@ export function Footer() {
                         scrollToSection(item.id);
                       }}
                     >
-                      <Typography variant="footerLink">{item.label}</Typography>
+                      <Typography variant="footerLink">{tNav(item.id)}</Typography>
                     </Link>
                   </Box>
                 ))}
@@ -93,7 +96,7 @@ export function Footer() {
             {/* Socials Section */}
             <Box>
               <Typography variant="h6" component="h4" sx={{ mb: 2 }}>
-                Socials
+                {tFooter("socials")}
               </Typography>
               <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0, display: "flex", flexDirection: "column", gap: 1 }}>
                 {socialLinks.map((social) => {
@@ -126,7 +129,7 @@ export function Footer() {
         {/* Copyright */}
         <Box sx={{ display: "flex", justifyContent: "flex-end", pt: 2 }}>
           <Typography variant="body2">
-            © {currentYear} Rafał Łukawski
+            {tFooter("copyright", { year: currentYear })}
           </Typography>
         </Box>
       </Container>

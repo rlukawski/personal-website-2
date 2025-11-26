@@ -14,8 +14,11 @@ import { grey } from "@mui/material/colors";
 import { AnimatedHamburger, TRANSITION_TIMEOUT } from "./AnimatedHamburger";
 import { useScrollSpy, scrollToSection } from "@/hooks/useScrollSpy";
 import { sections } from "@/config/navigation";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 export function ResponsiveAppBar() {
+  const t = useTranslations("navigation");
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -108,7 +111,7 @@ export function ResponsiveAppBar() {
                         display: "block",
                       }}
                     >
-                      {page.label.toUpperCase()}
+                      {t(page.id).toUpperCase()}
                     </Box>
                     {/* Visible text overlaid */}
                     <Box
@@ -125,12 +128,15 @@ export function ResponsiveAppBar() {
                         fontWeight: activeSection === page.id ? 700 : 500,
                       }}
                     >
-                      {page.label.toUpperCase()}
+                      {t(page.id).toUpperCase()}
                     </Box>
                   </Box>
                 </Button>
               ))}
             </Box>
+          </Box>
+          <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
+            <LanguageSwitcher />
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -176,18 +182,19 @@ export function ResponsiveAppBar() {
                   }}
                 >
                   <Typography
-                    sx={{
-                      textAlign: "center",
-                      fontWeight: activeSection === page.id ? 700 : 500,
-                      color: "inherit",
-                    }}
-                  >
-                    {page.label.toUpperCase()}
-                  </Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
+                  sx={{
+                    textAlign: "center",
+                    fontWeight: activeSection === page.id ? 700 : 500,
+                    color: "inherit",
+                  }}
+                >
+                  {t(page.id).toUpperCase()}
+                </Typography>
+              </MenuItem>
+            ))}
+          </Menu>
+          <LanguageSwitcher />
+        </Box>
         </Toolbar>
       </Container>
     </AppBar>

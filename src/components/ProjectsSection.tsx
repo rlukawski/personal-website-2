@@ -15,14 +15,13 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { SectionLayout } from "./SectionLayout";
 import { Project } from "./types";
+import { useTranslations } from "next-intl";
 
-const projects: Project[] = [
+const projectsData: Project[] = [
   {
     id: "egzoclinic",
-    title: "EGZOClinic",
-    dateRange: "January 2022 - present",
+    url: undefined,
     customer: { display: "EGZOTech.com", url: "https://egzotech.com" },
-    description: "Comprehensive software platform for physiotherapy and neurorehabilitation. The application runs on robotic medical devices including Stella BIO, Sidra LEG, and Meissa OT, facilitating rehabilitation for conditions like strokes and spinal cord injuries. Features include progressive continuous passive motion (CPM) therapy, computer-assisted movement (CAM) exercises including CAM Isokinetic and CAM Torque, graphical interface for EMS parameter configuration, comprehensive reporting with EMG data analysis, spasticity protection, electrode placement guidance, rehabilitation games, and multilingual support.",
     screenshots: [
       {
         id: "screen1",
@@ -40,11 +39,8 @@ const projects: Project[] = [
   },
   {
     id: "generator",
-    title: "Generator Pasków",
-    dateRange: "December 2024 - present",
-    customer: "Rafał Łukawski",
     url: "https://generator-paskow.pl",
-    description: "Full-stack meme generator platform for Polish TV programs. Built from scratch using modern Next.js stack with PostgreSQL database, Prisma ORM, and tRPC APIs. The platform enables users to create and share memes based on popular Polish television content. Features include image upload and manipulation, template management, user-generated content sharing, and responsive design. Deployed with Docker and CI/CD pipeline for production-ready reliability.",
+    customer: "Rafał Łukawski",
     screenshots: [
       {
         id: "screen1",
@@ -62,11 +58,8 @@ const projects: Project[] = [
   },
   {
     id: "stella",
-    title: "Stella BIO App",
-    dateRange: "March 2019 - April 2024",
-    customer: { display: "EGZOTech.com", url: "https://egzotech.com" },
     url: "https://app.egzotech.com",
-    description: "Online web application for managing and configuring the Stella BIO portable medical device, which provides advanced electromyography (EMG) and functional electrical stimulation (FES) capabilities. The application enables healthcare professionals and patients to remotely configure therapy programs, monitor EMG measurements, and manage treatment protocols. Built with Angular frontend and NestJS backend, the platform supports both clinical and home-based rehabilitation for neurological, orthopedic, oncological, pain management, sports, and pelvic floor conditions. Features include user authentication, EMG program configuration, therapy session management, and comprehensive reporting.",
+    customer: { display: "EGZOTech.com", url: "https://egzotech.com" },
     screenshots: [
       {
         id: "screen1",
@@ -84,10 +77,8 @@ const projects: Project[] = [
   },
   {
     id: "multibenefit",
-    title: "Multibenefit",
-    dateRange: "June 2013 - February 2016",
+    url: undefined,
     customer: { display: "Benefit Systems", url: "https://www.benefitsystems.pl/" },
-    description: "E-commerce platform designed to provide employees with access to a variety of non-wage benefits. The platform enabled employees to select from a range of perks including MultiSport cards, gift vouchers, and tickets to cultural events. Built from scratch with full-stack architecture, implementation, and project management. The platform aimed to enhance employee satisfaction and well-being by offering personalized benefits tailored to individual preferences, while providing employers with efficient tools to manage and distribute these benefits.",
     screenshots: [
       {
         id: "screen1",
@@ -106,8 +97,20 @@ const projects: Project[] = [
 ];
 
 export function ProjectsSection() {
+  const t = useTranslations("projects");
   const [selectedProjectId, setSelectedProjectId] = React.useState<string | null>(null);
   const [selectedScreenshotIndex, setSelectedScreenshotIndex] = React.useState<number | null>(null);
+  
+  // Merge translations with project data
+  const projects = projectsData.map((project) => ({
+    ...project,
+    title: t(`${project.id}.title`),
+    dateRange: t(`${project.id}.dateRange`),
+    description: t(`${project.id}.description`),
+    customer: typeof project.customer === "object" 
+      ? { ...project.customer, display: t(`${project.id}.customer`) }
+      : t(`${project.id}.customer`),
+  }));
 
   const handleScreenshotClick = (projectId: string, index: number) => {
     setSelectedProjectId(projectId);
@@ -130,7 +133,7 @@ export function ProjectsSection() {
         setSelectedScreenshotIndex(newIndex);
       }
     }
-  }, [selectedProjectId, selectedScreenshotIndex]);
+  }, [selectedProjectId, selectedScreenshotIndex, projects]);
 
   const handleNext = React.useCallback(() => {
     if (selectedProjectId !== null && selectedScreenshotIndex !== null) {
@@ -143,7 +146,7 @@ export function ProjectsSection() {
         setSelectedScreenshotIndex(newIndex);
       }
     }
-  }, [selectedProjectId, selectedScreenshotIndex]);
+  }, [selectedProjectId, selectedScreenshotIndex, projects]);
 
   // Handle keyboard navigation
   React.useEffect(() => {
@@ -175,7 +178,7 @@ export function ProjectsSection() {
       : null;
 
   return (
-    <SectionLayout title="Latest Projects" id="projects">
+    <SectionLayout title={t("title")} id="projects">
       <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
             {projects.map((project, index) => (
               <Box
@@ -238,7 +241,7 @@ export function ProjectsSection() {
                       }}
                     >
                       <Box component="span" sx={{ fontWeight: 600 }}>
-                        Customer:{" "}
+                        {t("customer")}:{" "}
                       </Box>
                       {typeof project.customer === "object" ? (
                         <Link
@@ -420,7 +423,7 @@ export function ProjectsSection() {
                           fontSize: "0.85rem",
                         }}
                       >
-                        Source: {selectedScreenshot.sourceUrl}
+                        {t("source")}: {selectedScreenshot.sourceUrl}
                       </Typography>
                     )}
                   </Box>

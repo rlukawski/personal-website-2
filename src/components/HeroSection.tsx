@@ -1,10 +1,14 @@
+"use client";
+
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { grey } from "@mui/material/colors";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export function HeroSection() {
+  const t = useTranslations("hero");
   return (
     <Box
       id="hero"
@@ -32,7 +36,7 @@ export function HeroSection() {
                 mb: 1,
               }}
             >
-              Rafał Łukawski
+              {t("name")}
             </Typography>
             <Typography
               variant="h5"
@@ -43,7 +47,7 @@ export function HeroSection() {
                 mb: 2,
               }}
             >
-              Software Developer and IT Project Manager
+              {t("title")}
             </Typography>
             <Box
               sx={{
@@ -71,7 +75,7 @@ export function HeroSection() {
                   fontWeight: 600,
                 }}
               >
-                Let&apos;s build products that matter!
+                {t("tagline")}
               </Typography>
             </Box>
           </Box>

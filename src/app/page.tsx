@@ -1,22 +1,8 @@
-"use client";
+import { redirect } from 'next/navigation';
+import { routing } from '@/i18n/routing';
 
-import Container from "@mui/material/Container";
-import { ResponsiveAppBar } from "@/components/ResponsiveAppBar";
-import { HeroSection } from "@/components/HeroSection";
-import { AboutSection } from "@/components/AboutSection";
-import { ProjectsSection } from "@/components/ProjectsSection";
-import { CertificatesSection } from "@/components/CertificatesSection";
-import { ContactSection } from "@/components/ContactSection";
-
-export default function Page() {
-  return (
-    <Container maxWidth="xl" sx={{ paddingX: 0 }}>
-      <ResponsiveAppBar />
-      <HeroSection />
-      <AboutSection />
-      <ProjectsSection />
-      <CertificatesSection />
-      <ContactSection />
-    </Container>
-  );
+// This page only renders when the user is at the root URL (/)
+// We redirect to the default locale
+export default function RootPage() {
+  redirect(`/${routing.defaultLocale}`);
 }

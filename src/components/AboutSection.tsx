@@ -1,9 +1,13 @@
+"use client";
+
 import Typography from "@mui/material/Typography";
 import { SectionLayout } from "./SectionLayout";
+import { useTranslations } from "next-intl";
 
 export function AboutSection() {
+  const t = useTranslations("about");
   return (
-    <SectionLayout title="About" id="about">
+    <SectionLayout title={t("title")} id="about">
       <Typography
         variant="body1"
         paragraph
@@ -11,19 +15,12 @@ export function AboutSection() {
           mb: 3,
         }}
       >
-        Hello, my name is Rafał Łukawski. I&apos;m a full-stack developer with
-        over 5 years of modern frontend/backend experience and over 20 years
-        in IT. I&apos;m passionate about the entire software development
-        lifecycle—from system architecture, through implementation, to
-        production deployment.
+        {t("paragraph1")}
       </Typography>
       <Typography
         variant="body1"
       >
-        Google Cloud Professional Architect (2024) | Professional Scrum
-        Master | Built systems for millions of users at Onet.pl | Led
-        telecommunications projects at TP.SA | Currently developing complex
-        React/Next.js applications and mentoring developers.
+        {t("paragraph2")}
       </Typography>
     </SectionLayout>
   );

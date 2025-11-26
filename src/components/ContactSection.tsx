@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -8,8 +10,10 @@ import Alert from "@mui/material/Alert";
 import { grey } from "@mui/material/colors";
 import { SectionLayout } from "./SectionLayout";
 import { socialLinks } from "@/config/socials";
+import { useTranslations } from "next-intl";
 
 export function ContactSection() {
+  const t = useTranslations("contact");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -40,12 +44,12 @@ export function ContactSection() {
   };
 
   return (
-    <SectionLayout title="Contact" id="contact">
+    <SectionLayout title={t("title")} id="contact">
       <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" }, gap: 8 }}>
         {/* Contact Information */}
         <Box>
           <Typography variant="h6" component="h3" sx={{ mb: 3 }}>
-            Get in Touch
+            {t("getInTouch")}
           </Typography>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             {socialLinks.map((social) => {
@@ -72,19 +76,19 @@ export function ContactSection() {
         {/* Contact Form */}
         <Box>
           <Typography variant="h6" component="h3" sx={{ mb: 3 }}>
-            Send a Message
+            {t("sendMessage")}
           </Typography>
           <form onSubmit={handleSubmit}>
             <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
               <TextField
-                label="Name"
+                label={t("form.name")}
                 name="name"
                 variant="outlined"
                 fullWidth
                 required
               />
               <TextField
-                label="Email"
+                label={t("form.email")}
                 name="email"
                 type="email"
                 variant="outlined"
@@ -92,7 +96,7 @@ export function ContactSection() {
                 required
               />
               <TextField
-                label="Message"
+                label={t("form.message")}
                 name="message"
                 variant="outlined"
                 multiline
@@ -115,18 +119,18 @@ export function ContactSection() {
                 }}
               >
                 {status === "submitting"
-                  ? "Sending..."
+                  ? t("form.sending")
                   : status === "success"
-                  ? "Message Sent!"
+                  ? t("form.sent")
                   : status === "error"
-                  ? "Error - Try Again"
-                  : "Send Message"}
+                  ? t("form.error")
+                  : t("form.send")}
               </Button>
               {status === "success" && (
-                <Alert severity="success">Thank you! Your message has been sent.</Alert>
+                <Alert severity="success">{t("form.successMessage")}</Alert>
               )}
               {status === "error" && (
-                <Alert severity="error">There was an error sending your message. Please try again.</Alert>
+                <Alert severity="error">{t("form.errorMessage")}</Alert>
               )}
             </Box>
           </form>
