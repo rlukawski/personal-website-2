@@ -13,19 +13,15 @@ import MenuItem from "@mui/material/MenuItem";
 import { grey } from "@mui/material/colors";
 import { AnimatedHamburger, TRANSITION_TIMEOUT } from "./AnimatedHamburger";
 import { useScrollSpy, scrollToSection } from "@/hooks/useScrollSpy";
-
-const pages = [
-  { label: "ABOUT", id: "about" },
-  { label: "PROJECTS", id: "projects" },
-  { label: "CERTIFICATES", id: "certificates" },
-  { label: "CONTACT", id: "contact" },
-];
+import { sections } from "@/config/navigation";
 
 export function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
-  const activeSection = useScrollSpy(["hero", ...pages.map((page) => page.id)]);
+  const activeSection = useScrollSpy(sections.map((section) => section.id));
+
+  const navItems = sections.filter((section) => section.showInHeader);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -74,7 +70,7 @@ export function ResponsiveAppBar() {
               Rafał Łukawski
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              {pages.map((page) => (
+              {navItems.map((page) => (
                 <Button
                   key={page.id}
                   onClick={() => handleNavClick(page.id)}
@@ -94,7 +90,7 @@ export function ResponsiveAppBar() {
                         display: "block",
                       }}
                     >
-                      {page.label}
+                      {page.label.toUpperCase()}
                     </Box>
                     {/* Visible text overlaid */}
                     <Box
@@ -111,7 +107,7 @@ export function ResponsiveAppBar() {
                         fontWeight: activeSection === page.id ? 700 : 500,
                       }}
                     >
-                      {page.label}
+                      {page.label.toUpperCase()}
                     </Box>
                   </Box>
                 </Button>
@@ -146,10 +142,10 @@ export function ResponsiveAppBar() {
               sx={{ display: { xs: "block", md: "none" } }}
               transitionDuration={TRANSITION_TIMEOUT}
             >
-              {pages.map((page) => (
+              {navItems.map((page) => (
                 <MenuItem key={page.id} onClick={() => handleNavClick(page.id)}>
                   <Typography sx={{ textAlign: "center", fontWeight: activeSection === page.id ? 700 : 500 }}>
-                    {page.label}
+                    {page.label.toUpperCase()}
                   </Typography>
                 </MenuItem>
               ))}

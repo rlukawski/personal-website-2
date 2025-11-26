@@ -8,14 +8,7 @@ import Link from "@mui/material/Link";
 import { grey } from "@mui/material/colors";
 import { FaArrowUp, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import { scrollToSection } from "@/hooks/useScrollSpy";
-
-const sitemapItems = [
-  { label: "Home", id: "hero" },
-  { label: "About", id: "about" },
-  { label: "Projects", id: "projects" },
-  { label: "Certificates", id: "certificates" },
-  { label: "Contact", id: "contact" },
-];
+import { sections } from "@/config/navigation";
 
 const socialLinks = [
   {
@@ -94,7 +87,7 @@ export function Footer() {
               Sitemap
             </Typography>
             <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0, display: "flex", flexDirection: "column", gap: 1 }}>
-              {sitemapItems.map((item) => (
+              {sections.map((item) => (
                 <Box component="li" key={item.label}>
                   <Link
                     href={`#${item.id}`}
