@@ -135,10 +135,12 @@ export function ResponsiveAppBar() {
               ))}
             </Box>
           </Box>
-          <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center" }}>
-            <LanguageSwitcher />
-          </Box>
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+          
+          {/* Single Language Switcher - visible on both mobile and desktop */}
+          <LanguageSwitcher />
+          
+          {/* Mobile menu hamburger */}
+          <Box sx={{ display: { xs: "flex", md: "none" }, ml: 1 }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -182,19 +184,18 @@ export function ResponsiveAppBar() {
                   }}
                 >
                   <Typography
-                  sx={{
-                    textAlign: "center",
-                    fontWeight: activeSection === page.id ? 700 : 500,
-                    color: "inherit",
-                  }}
-                >
-                  {t(page.id).toUpperCase()}
-                </Typography>
-              </MenuItem>
-            ))}
-          </Menu>
-          <LanguageSwitcher />
-        </Box>
+                    sx={{
+                      textAlign: "center",
+                      fontWeight: activeSection === page.id ? 700 : 500,
+                      color: "inherit",
+                    }}
+                  >
+                    {t(page.id).toUpperCase()}
+                  </Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
