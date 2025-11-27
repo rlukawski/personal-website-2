@@ -13,25 +13,25 @@ interface ScrambleTextProps {
   sx?: SxProps<Theme>;
 }
 
+const getRandomChar = () => {
+  return SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
+};
+
+const scrambleText = (original: string): string => {
+  return original
+    .split("")
+    .map((char) => {
+      if (char === " ") return char;
+      // ~40% chance to scramble each character
+      return Math.random() < 0.4 ? getRandomChar() : char;
+    })
+    .join("");
+};
+
 export function ScrambleText({ text, sx }: ScrambleTextProps) {
   const [displayText, setDisplayText] = useState(text);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const getRandomChar = () => {
-    return SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)];
-  };
-
-  const scrambleText = (original: string): string => {
-    return original
-      .split("")
-      .map((char) => {
-        if (char === " ") return char;
-        // ~40% chance to scramble each character
-        return Math.random() < 0.4 ? getRandomChar() : char;
-      })
-      .join("");
-  };
 
   const handleMouseEnter = useCallback(() => {
     // Clear any existing timers
@@ -71,9 +71,7 @@ export function ScrambleText({ text, sx }: ScrambleTextProps) {
       component="span"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      sx={{
-        ...sx,
-      }}
+      sx={sx}
     >
       {displayText}
     </Box>
