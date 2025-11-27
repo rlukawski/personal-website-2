@@ -103,9 +103,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <GoogleAnalytics />
         <NextIntlClientProvider messages={messages}>
           <AppRouterCacheProvider>
