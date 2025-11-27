@@ -71,7 +71,10 @@ export function ScrambleText({ text, sx }: ScrambleTextProps) {
       component="span"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      sx={sx}
+      sx={{
+        textWrap: "nowrap",
+        ...sx,
+      }}
     >
       {displayText}
     </Box>
