@@ -23,6 +23,7 @@ import {
   SiGit,
   SiGooglecloud,
   SiDocker,
+  SiDotnet,
 } from "react-icons/si";
 import { IoMdSettings } from "react-icons/io";
 import { MdLoop } from "react-icons/md";
@@ -84,6 +85,7 @@ export function TechnologiesSection() {
         { name: "Express", emoji: "E", color: iconColor },
         { name: "PostgreSQL", icon: SiPostgresql, color: iconColor },
         { name: "MySQL", icon: SiMysql, color: iconColor },
+        { name: ".NET", icon: SiDotnet, color: iconColor },
       ],
     },
     {
@@ -97,9 +99,7 @@ export function TechnologiesSection() {
     },
     {
       title: t("methodologies"),
-      items: [
-        { name: "Agile/Scrum", icon: MdLoop, color: iconColor },
-      ],
+      items: [{ name: "Agile/Scrum", icon: MdLoop, color: iconColor }],
     },
   ];
 
@@ -187,4 +187,3 @@ export function TechnologiesSection() {
     </SectionLayout>
   );
 }
-
