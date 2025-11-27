@@ -1,37 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Personal Portfolio Website
 
-## Getting Started
+A modern, responsive personal portfolio website built with **Next.js 16**, **React 19**, and **Material UI 7**. Features internationalization (EN/PL), smooth animations, and a clean developer-focused design.
 
-First, run the development server:
+![Preview](./public/preview_en.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+- **🌍 Internationalization** — Full English and Polish language support with `next-intl`
+- **🎨 Modern UI** — Clean, professional design using Material UI 7 with custom theming
+- **📱 Fully Responsive** — Optimized for mobile, tablet, and desktop
+- **⚡ Special Effects** — Scramble text animation on navigation hover
+- **🧭 Scroll Spy Navigation** — Active section highlighting as you scroll
+- **📊 Google Analytics** — Built-in analytics integration
+- **🐳 Docker Ready** — Multi-stage Dockerfile for production deployment
+- **🔍 SEO Optimized** — Sitemap, robots.txt, and meta tags included
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+|----------|-------------|
+| **Framework** | Next.js 16, React 19 |
+| **Language** | TypeScript |
+| **Styling** | Material UI 7, Emotion |
+| **i18n** | next-intl |
+| **Icons** | MUI Icons, React Icons |
+| **Deployment** | Docker, Docker Compose |
+
+## 📂 Project Structure
+
+```
+src/
+├── app/                  # Next.js App Router pages
+│   └── [locale]/         # Internationalized routes
+├── components/           # React components
+│   ├── HeroSection       # Landing hero with photo
+│   ├── AboutSection      # Professional bio
+│   ├── TechnologiesSection # Skills grid
+│   ├── ProjectsSection   # Portfolio showcase
+│   ├── CertificatesSection # Certifications display
+│   ├── ContactSection    # Contact form
+│   └── ScrambleText      # Text scramble hover effect
+├── config/               # Navigation & social links config
+├── hooks/                # Custom hooks (useScrollSpy)
+├── i18n/                 # Translation files (en.json, pl.json)
+└── theme/                # MUI theme customization
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 20+
+- npm or yarn
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Clone the repository
+git clone https://github.com/rlukawski/personal-website-2.git
+cd personal-website-2
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Install dependencies
+npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Run development server
+npm run dev
+```
 
-## Deploy on Vercel
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Production Build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# personal-website-2
+```bash
+npm run build
+npm start
+```
+
+### Docker Deployment
+
+```bash
+docker-compose up -d
+```
+
+## 🌐 Live Demo
+
+- 🇬🇧 English: [lukawski.eu/en](https://lukawski.eu/en)
+- 🇵🇱 Polish: [lukawski.eu/pl](https://lukawski.eu/pl)
+
+## 📝 License
+
+MIT © Rafał Łukawski
