@@ -22,8 +22,7 @@ const scrambleText = (original: string): string => {
     .split("")
     .map((char) => {
       if (char === " ") return char;
-      // ~40% chance to scramble each character
-      return Math.random() < 0.4 ? getRandomChar() : char;
+      return Math.random() < 0.2 ? getRandomChar() : char;
     })
     .join("");
 };
