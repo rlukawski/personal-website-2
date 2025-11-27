@@ -146,6 +146,10 @@ export function HeroSection() {
               overflow: "hidden",
               flexShrink: 0,
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.25)",
+              transition: "box-shadow 0.3s ease, transform 0.3s ease",
+              "&:hover": {
+                boxShadow: "0 8px 24px rgba(0, 0, 0, 0.35)",
+              },
             }}
           >
             <Image
