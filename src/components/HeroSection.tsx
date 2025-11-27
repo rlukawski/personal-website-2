@@ -19,10 +19,37 @@ export function HeroSection() {
       sx={{
         width: "100%",
         py: { xs: 4, md: 6 },
-        mt: { xs: 8, md: 8 },
+        mt: { xs: 6, md: 6 },
+        scrollMarginTop: "48px",
       }}
     >
       <Container maxWidth="xl">
+        <Box sx={{ mb: 3, textAlign: "center" }}>
+          <Typography
+            variant="body2"
+            sx={{
+              fontStyle: "italic",
+              fontWeight: 400,
+              color: grey[500],
+              fontSize: { xs: "0.875rem", md: "0.95rem" },
+              lineHeight: 1.2,
+            }}
+          >
+            {t("mottoLine1")}
+          </Typography>
+          <Typography
+            variant="body2"
+            sx={{
+              fontStyle: "italic",
+              fontWeight: 400,
+              color: grey[500],
+              fontSize: { xs: "0.875rem", md: "0.95rem" },
+              lineHeight: 1.2,
+            }}
+          >
+            {t("mottoLine2")}
+          </Typography>
+        </Box>
         <Box
           sx={{
             display: "flex",

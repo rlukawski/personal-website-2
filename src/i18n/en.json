@@ -8,6 +8,8 @@
     "contact": "Contact"
   },
   "hero": {
+    "mottoLine1": "There is no answer it can't be done.",
+    "mottoLine2": "There is only the question: How can we do it?",
     "name": "Rafał Łukawski",
     "title": "Software Developer | IT Project Manager",
     "tagline": "Let's build products that matter!",
