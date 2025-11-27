@@ -15,6 +15,7 @@ import { AnimatedHamburger, TRANSITION_TIMEOUT } from "./AnimatedHamburger";
 import { useScrollSpy, scrollToSection } from "@/hooks/useScrollSpy";
 import { sections } from "@/config/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ScrambleText } from "./ScrambleText";
 import { useTranslations } from "next-intl";
 
 export function ResponsiveAppBar() {
@@ -128,7 +129,7 @@ export function ResponsiveAppBar() {
                         fontWeight: activeSection === page.id ? 700 : 500,
                       }}
                     >
-                      {t(page.id).toUpperCase()}
+                      <ScrambleText text={t(page.id).toUpperCase()} />
                     </Box>
                   </Box>
                 </Button>
@@ -190,7 +191,7 @@ export function ResponsiveAppBar() {
                       color: "inherit",
                     }}
                   >
-                    {t(page.id).toUpperCase()}
+                    <ScrambleText text={t(page.id).toUpperCase()} />
                   </Typography>
                 </MenuItem>
               ))}
