@@ -55,6 +55,7 @@ export function Footer() {
                 backgroundColor: grey[800],
                 color: "white",
                 textTransform: "none",
+                mt: 3,
                 px: 3,
                 py: 1.5,
                 "&:hover": {
