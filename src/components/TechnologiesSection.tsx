@@ -99,7 +99,11 @@ export function TechnologiesSection() {
     },
     {
       title: t("methodologies"),
-      items: [{ name: "Agile/Scrum", icon: MdLoop, color: iconColor }],
+      items: [
+        { name: "Scrum", icon: MdLoop, color: iconColor },
+        { name: "Kanban", emoji: "📌", color: iconColor },
+        { name: "Waterfall", emoji: "📋", color: iconColor },
+      ],
     },
   ];
 
@@ -124,6 +128,7 @@ export function TechnologiesSection() {
               sx={{
                 mb: 2,
                 fontWeight: 600,
+                whiteSpace: "nowrap",
               }}
             >
               {category.title}
