@@ -1,4 +1,4 @@
-import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from "react-icons/fa";
 import { IconType } from "react-icons";
 
 export interface SocialLink {
@@ -22,6 +22,11 @@ export const socialLinks: SocialLink[] = [
     name: "Email",
     url: "mailto:rafal@lukawski.eu",
     icon: FaEnvelope,
+  },
+  {
+    name: "+48 570 116 416",
+    url: "tel:+48570116416",
+    icon: FaPhone,
   },
 ];
 
