@@ -11,14 +11,14 @@
     "mottoLine1": "Nie ma odpowiedzi: 'Tego nie da się zrobić'.",
     "mottoLine2": "Jest tylko pytanie: 'Jak możemy to zrobić?'",
     "name": "Rafał Łukawski",
-    "title": "Software Developer | Kierownik Projektów IT",
+    "title": "Kierownik Projektów IT | Software Developer",
     "tagline": "Zbudujmy produkty, które mają znaczenie!",
     "contactMe": "Skontaktuj się"
   },
   "about": {
     "title": "O mnie",
-    "paragraph1": "Cześć, nazywam się Rafał Łukawski. Jestem full-stack developerem z ponad 5-letnim doświadczeniem w nowoczesnym frontend/backend oraz ponad 20-letnim stażem w IT. Pasjonuję się pełnym cyklem życia oprogramowania—od architektury systemu, przez implementację, aż po wdrożenie produkcyjne.",
-    "paragraph2": "Google Cloud Professional Architect (2024) | Professional Scrum Master | Budowałem systemy dla milionów użytkowników w Onet.pl | Prowadziłem projekty telekomunikacyjne w TP.SA | Obecnie rozwijam zaawansowane aplikacje React/Next.js i mentoruję programistów."
+    "paragraph1": "Cześć, nazywam się Rafał Łukawski. Jestem Kierownikiem Projektów IT i full-stack developerem z ponad 5-letnim doświadczeniem w nowoczesnym frontend/backend oraz ponad 20-letnim stażem w IT. Łączę wiedzę techniczną z umiejętnościami zarządzania projektami, dostarczając skuteczne rozwiązania software'owe—od architektury systemu i koordynacji zespołu, przez implementację, aż po wdrożenie produkcyjne.",
+    "paragraph2": "Google Cloud Professional Architect (2024) | Professional Scrum Master | Budowałem systemy dla milionów użytkowników w Onet.pl | Prowadziłem projekty telekomunikacyjne w TP.SA | Obecnie zarządzam projektami IT, rozwijam zaawansowane aplikacje React/Next.js i mentoruję programistów."
   },
   "technologies": {
     "title": "Kluczowe Technologie",
