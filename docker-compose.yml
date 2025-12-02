@@ -24,6 +24,22 @@ services:
       - 'traefik.http.middlewares.www-personal-website-2-redirect.redirectregex.replacement=https://lukawski.eu/$${1}'
       - 'traefik.http.middlewares.www-personal-website-2-redirect.redirectregex.permanent=true'
 
+      - 'traefik.http.routers.personal-website-2.rule=Host(`lukawski.eu`)'
+      - 'traefik.http.routers.personal-website-2.entrypoints=web'
+      - 'traefik.http.routers.personal-website-2.middlewares=personal-website-2-insecure-redirect'
+
+      - 'traefik.http.routers.www-personal-website-2.rule=Host(`www.lukawski.eu`)'
+      - 'traefik.http.routers.www-personal-website-2.entrypoints=web'
+      - 'traefik.http.routers.www-personal-website-2.middlewares=www-personal-website-2-insecure-redirect'
+
+      - 'traefik.http.middlewares.www-personal-website-2-insecure-redirect.redirectregex.regex=^http://www\.lukawski\.eu/(.*)'
+      - 'traefik.http.middlewares.www-personal-website-2-insecure-redirect.redirectregex.replacement=https://lukawski.eu/$${1}'
+      - 'traefik.http.middlewares.www-personal-website-2-insecure-redirect.redirectregex.permanent=true'
+
+      - 'traefik.http.middlewares.personal-website-2-insecure-redirect.redirectregex.regex=^http://lukawski\.eu/(.*)'
+      - 'traefik.http.middlewares.personal-website-2-insecure-redirect.redirectregex.replacement=https://lukawski.eu/$${1}'
+      - 'traefik.http.middlewares.personal-website-2-insecure-redirect.redirectregex.permanent=true'
+
 networks:
   proxy-network:
     external: true
