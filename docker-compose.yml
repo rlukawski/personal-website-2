@@ -17,18 +17,18 @@ services:
 
       - 'traefik.http.routers.personal-website-2.rule=Host(`lukawski.eu`)'
       - 'traefik.http.routers.personal-website-2.entrypoints=web'
-      - 'traefik.http.routers.personal-website-2.middlewares=https-redirect'
-      - 'traefik.http.middlewares.https-redirect.redirectscheme.scheme=https'
-      - 'traefik.http.middlewares.https-redirect.redirectscheme.permanent=true'
+      - 'traefik.http.routers.personal-website-2.middlewares=personal-website-2-https-redirect'
+      - 'traefik.http.middlewares.personal-website-2-https-redirect.redirectscheme.scheme=https'
+      - 'traefik.http.middlewares.personal-website-2-https-redirect.redirectscheme.permanent=true'
 
       - 'traefik.http.routers.www-personal-website-2.rule=Host(`www.lukawski.eu`)'
       - 'traefik.http.routers.www-personal-website-2.entrypoints=web,websecure'
       - 'traefik.http.routers.www-personal-website-2.tls.certresolver=myresolver'
-      - 'traefik.http.routers.www-personal-website-2.middlewares=www-redirect'
+      - 'traefik.http.routers.www-personal-website-2.middlewares=personal-website-2-www-redirect'
       
-      - 'traefik.http.middlewares.www-redirect.redirectregex.regex=^https?://www\.lukawski\.eu/(.*)'
-      - 'traefik.http.middlewares.www-redirect.redirectregex.replacement=https://lukawski.eu/$${1}'
-      - 'traefik.http.middlewares.www-redirect.redirectregex.permanent=true'
+      - 'traefik.http.middlewares.personal-website-2-www-redirect.redirectregex.regex=^https?://www\.lukawski\.eu/(.*)'
+      - 'traefik.http.middlewares.personal-website-2-www-redirect.redirectregex.replacement=https://lukawski.eu/$${1}'
+      - 'traefik.http.middlewares.personal-website-2-www-redirect.redirectregex.permanent=true'
 
 networks:
   proxy-network:
