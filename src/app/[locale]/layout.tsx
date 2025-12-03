@@ -40,7 +40,7 @@ export async function generateMetadata({
   const currentImageConfig = imageConfig[locale as 'en' | 'pl'] || imageConfig.en;
   
   return {
-    title: "Rafał Łukawski - Software Developer and IT Project Manager",
+    title: "Rafał Łukawski - IT Project Manager | Software Developer",
     description: "Full-stack developer with 5+ years of modern frontend/backend experience and 20+ years of experience in IT. Google Cloud Professional Architect | Professional Scrum Master",
     authors: [{ name: "Rafał Łukawski" }],
     
@@ -56,7 +56,7 @@ export async function generateMetadata({
     
     // Open Graph for social media
     openGraph: {
-      title: "Rafał Łukawski - Software Developer and IT Project Manager",
+      title: "Rafał Łukawski - IT Project Manager | Software Developer",
       description: "Full-stack developer with 5+ years of modern frontend/backend experience. Google Cloud Professional Architect | Professional Scrum Master",
       locale: locale === 'pl' ? 'pl_PL' : 'en_US',
       alternateLocale: locale === 'pl' ? ['en_US'] : ['pl_PL'],
@@ -68,7 +68,7 @@ export async function generateMetadata({
           url: `${baseUrl}/preview_${locale}.png`,
           width: currentImageConfig.width,
           height: currentImageConfig.height,
-          alt: 'Rafał Łukawski - Software Developer and IT Project Manager',
+          alt: 'Rafał Łukawski - IT Project Manager | Software Developer',
         },
       ],
     },
@@ -76,7 +76,7 @@ export async function generateMetadata({
     // Twitter Card for better Twitter/X sharing
     twitter: {
       card: 'summary_large_image',
-      title: "Rafał Łukawski - Software Developer and IT Project Manager",
+      title: "Rafał Łukawski - IT Project Manager | Software Developer",
       description: "Full-stack developer with 5+ years of modern frontend/backend experience. Google Cloud Professional Architect | Professional Scrum Master",
       images: [`${baseUrl}/preview_${locale}.png`],
     },
