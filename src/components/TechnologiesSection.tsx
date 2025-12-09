@@ -48,6 +48,14 @@ export function TechnologiesSection() {
 
   const categories: TechCategory[] = [
     {
+      title: t("methodologies"),
+      items: [
+        { name: "Scrum", icon: MdLoop, color: iconColor },
+        { name: "Kanban", emoji: "📌", color: iconColor },
+        { name: "Waterfall", emoji: "📋", color: iconColor },
+      ],
+    },
+    {
       title: t("frontend"),
       items: [
         { name: "React", icon: SiReact, color: iconColor },
@@ -95,14 +103,6 @@ export function TechnologiesSection() {
         { name: "GCP", icon: SiGooglecloud, color: iconColor },
         { name: "Docker + Swarm", icon: SiDocker, color: iconColor },
         { name: "CI/CD", icon: IoMdSettings, color: iconColor },
-      ],
-    },
-    {
-      title: t("methodologies"),
-      items: [
-        { name: "Scrum", icon: MdLoop, color: iconColor },
-        { name: "Kanban", emoji: "📌", color: iconColor },
-        { name: "Waterfall", emoji: "📋", color: iconColor },
       ],
     },
   ];
