@@ -2,6 +2,8 @@
   "navigation": {
     "hero": "Start",
     "about": "O mnie",
+    "pm": "PM",
+    "stack": "Stos",
     "technologies": "Technologie",
     "projects": "Projekty",
     "certificates": "Certyfikaty",
@@ -19,6 +21,10 @@
     "title": "O mnie",
     "paragraph1": "Cześć, nazywam się Rafał Łukawski. Jestem Kierownikiem Projektów IT i Software Deweloperem z ponad 5-letnim doświadczeniem w nowoczesnym frontenddzie i backendzie oraz ponad 20-letnim stażem w IT. Łączę wiedzę techniczną z umiejętnościami zarządzania projektami, dostarczając skuteczne rozwiązania software'owe—od architektury systemu i koordynacji zespołu, przez implementację, aż po wdrożenie produkcyjne.",
     "paragraph2": "Google Cloud Professional Architect (2024) | Professional Scrum Master | Budowałem systemy dla milionów użytkowników w Onet.pl | Prowadziłem projekty telekomunikacyjne w TP.SA | Obecnie zarządzam projektami IT, rozwijam zaawansowane aplikacje React/Next.js i mentoruję programistów."
+  },
+  "projectManagement": {
+    "title": "Zarządzanie projektami",
+    "methodologies": "Metodyki"
   },
   "technologies": {
     "title": "Kluczowe Technologie",
