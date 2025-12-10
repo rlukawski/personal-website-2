@@ -28,6 +28,7 @@ import {
 import { IoMdSettings } from "react-icons/io";
 import { MdLoop } from "react-icons/md";
 import { IconType } from "react-icons";
+import { Categories } from "@/components/Categories";
 
 interface TechItem {
   name: string;
@@ -47,14 +48,6 @@ export function TechnologiesSection() {
   const iconColor = "#6b7280"; // Uniform gray color for all icons
 
   const categories: TechCategory[] = [
-    {
-      title: t("methodologies"),
-      items: [
-        { name: "Scrum", icon: MdLoop, color: iconColor },
-        { name: "Kanban", emoji: "📌", color: iconColor },
-        { name: "Waterfall", emoji: "📋", color: iconColor },
-      ],
-    },
     {
       title: t("frontend"),
       items: [
@@ -109,86 +102,7 @@ export function TechnologiesSection() {
 
   return (
     <SectionLayout title={t("title")} id="technologies">
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: {
-            xs: "1fr",
-            sm: "repeat(2, 1fr)",
-            md: "repeat(4, 1fr)",
-          },
-          gap: 4,
-        }}
-      >
-        {categories.map((category) => (
-          <Box key={category.title}>
-            <Typography
-              variant="h6"
-              component="h3"
-              sx={{
-                mb: 2,
-                fontWeight: 600,
-                whiteSpace: "nowrap",
-              }}
-            >
-              {category.title}
-            </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 1,
-              }}
-            >
-              {category.items.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <Chip
-                    key={item.name}
-                    icon={
-                      item.emoji ? (
-                        <Box
-                          component="span"
-                          sx={{
-                            fontSize: "0.94rem",
-                            marginLeft: "8px",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            fontWeight: "bold",
-                            color: item.color,
-                            filter: "grayscale(1)",
-                            minWidth: "0.94rem",
-                          }}
-                        >
-                          {item.emoji}
-                        </Box>
-                      ) : Icon ? (
-                        <Icon
-                          style={{
-                            color: item.color,
-                            fontSize: "0.94rem",
-                            marginLeft: "8px",
-                          }}
-                        />
-                      ) : undefined
-                    }
-                    label={item.name}
-                    sx={{
-                      justifyContent: "flex-start",
-                      fontSize: "0.875rem",
-                      backgroundColor: grey[100],
-                      "& .MuiChip-icon": {
-                        marginRight: "4px",
-                      },
-                    }}
-                  />
-                );
-              })}
-            </Box>
-          </Box>
-        ))}
-      </Box>
+      <Categories categories={categories} />
     </SectionLayout>
   );
 }

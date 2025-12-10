@@ -8,6 +8,7 @@ import { TechnologiesSection } from "@/components/TechnologiesSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { CertificatesSection } from "@/components/CertificatesSection";
 import { ContactSection } from "@/components/ContactSection";
+import { ProjectManagementSection } from "@/components/ProjectManagementSection";
 
 export default function Page() {
   return (
@@ -15,6 +16,7 @@ export default function Page() {
       <ResponsiveAppBar />
       <HeroSection />
       <AboutSection />
+      <ProjectManagementSection />
       <TechnologiesSection />
       <ProjectsSection />
       <CertificatesSection />
