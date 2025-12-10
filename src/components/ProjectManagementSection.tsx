@@ -60,7 +60,7 @@ export function ProjectManagementSection() {
 
   return (
     <SectionLayout title={t("title")} id="technologies">
-      <Categories categories={categories} />
+      <Categories categories={categories} template={{ xs: "1fr" }} orientation="row" />
     </SectionLayout>
   );
 }

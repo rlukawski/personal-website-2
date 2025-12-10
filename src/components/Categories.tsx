@@ -1,4 +1,4 @@
-import { Box, Chip, Typography } from "@mui/material";
+import { Box, BoxProps, Chip, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { IconType } from "react-icons";
 
@@ -14,17 +14,25 @@ interface TechCategory {
   items: TechItem[];
 }
 
-export const Categories = (props: { categories: TechCategory[] }) => {
-  const { categories } = props;
+export const Categories = (props: {
+  categories: TechCategory[];
+  template?: BoxProps["gridTemplateColumns"];
+  orientation?: "row" | "column";
+}) => {
+  const {
+    categories,
+    template = {
+      xs: "1fr",
+      sm: "repeat(2, 1fr)",
+      md: "repeat(4, 1fr)",
+    },
+    orientation = "column",
+  } = props;
   return (
     <Box
       sx={{
         display: "grid",
-        gridTemplateColumns: {
-          xs: "1fr",
-          sm: "repeat(2, 1fr)",
-          md: "repeat(4, 1fr)",
-        },
+        gridTemplateColumns: template,
         gap: 4,
       }}
     >
@@ -44,7 +52,7 @@ export const Categories = (props: { categories: TechCategory[] }) => {
           <Box
             sx={{
               display: "flex",
-              flexDirection: "column",
+              flexDirection: orientation,
               gap: 1,
             }}
           >
