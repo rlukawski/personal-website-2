@@ -93,6 +93,7 @@ export function ResponsiveAppBar() {
                     "&:hover": {
                       backgroundColor: page.isCta ? grey[300] : undefined,
                     },
+                    whiteSpace: ""
                   }}
                 >
                   <Box

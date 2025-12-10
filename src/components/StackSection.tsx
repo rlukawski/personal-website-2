@@ -42,7 +42,7 @@ interface TechCategory {
   items: TechItem[];
 }
 
-export function TechnologiesSection() {
+export function StackSection() {
   const t = useTranslations("technologies");
 
   const iconColor = "#6b7280"; // Uniform gray color for all icons
@@ -101,7 +101,7 @@ export function TechnologiesSection() {
   ];
 
   return (
-    <SectionLayout title={t("title")} id="technologies">
+    <SectionLayout title={t("title")} id="stack">
       <Categories categories={categories} />
     </SectionLayout>
   );

@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 import { ResponsiveAppBar } from "@/components/ResponsiveAppBar";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
-import { TechnologiesSection } from "@/components/TechnologiesSection";
+import { StackSection } from "@/components/StackSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { CertificatesSection } from "@/components/CertificatesSection";
 import { ContactSection } from "@/components/ContactSection";
@@ -17,7 +17,7 @@ export default function Page() {
       <HeroSection />
       <AboutSection />
       <ProjectManagementSection />
-      <TechnologiesSection />
+      <StackSection />
       <ProjectsSection />
       <CertificatesSection />
       <ContactSection />
