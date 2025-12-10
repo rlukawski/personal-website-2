@@ -73,15 +73,19 @@ export function ResponsiveAppBar() {
             >
               Rafał Łukawski
             </Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, gap: 1 }}>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", md: "flex" },
+                gap: { xs: 0, sm: 0, lg: 2},
+              }}
+            >
               {navItems.map((page) => (
                 <Button
                   key={page.id}
                   onClick={() => handleNavClick(page.id)}
                   sx={{
-                    color: activeSection === page.id
-                      ? "black"
-                      : grey[800],
+                    color: activeSection === page.id ? "black" : grey[800],
                     display: "block",
                     textTransform: "uppercase",
                     backgroundColor: page.isCta ? grey[200] : "transparent",
@@ -93,7 +97,7 @@ export function ResponsiveAppBar() {
                     "&:hover": {
                       backgroundColor: page.isCta ? grey[300] : undefined,
                     },
-                    whiteSpace: ""
+                    whiteSpace: "",
                   }}
                 >
                   <Box
@@ -137,10 +141,10 @@ export function ResponsiveAppBar() {
               ))}
             </Box>
           </Box>
-          
+
           {/* Single Language Switcher - visible on both mobile and desktop */}
           <LanguageSwitcher />
-          
+
           {/* Mobile menu hamburger */}
           <Box sx={{ display: { xs: "flex", md: "none" }, ml: 1 }}>
             <IconButton
