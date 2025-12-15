@@ -77,6 +77,7 @@ theme = createTheme(theme, {
       color: grey[700],
       fontSize: "0.9rem",
       lineHeight: 1.5,
+      whiteSpace: "nowrap",
     },
     button: {
       textTransform: "none",
