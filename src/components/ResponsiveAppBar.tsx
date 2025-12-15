@@ -91,7 +91,7 @@ export function ResponsiveAppBar() {
                 letterSpacing: ".3rem",
                 textDecoration: "none",
                 cursor: "pointer",
-                scale: scrolled ? 1.0 : 1.05,
+                scale: scrolled ? 1.0 : 1.03,
                 transition: `scale ${time}s ease-in-out`,
               }}
             >
