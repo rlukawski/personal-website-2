@@ -17,9 +17,11 @@ import { sections } from "@/config/navigation";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ScrambleText } from "./ScrambleText";
 import { useTranslations } from "next-intl";
+import { useScrollAware } from "@/hooks/useScrollAware";
 
 export function ResponsiveAppBar() {
   const t = useTranslations("navigation");
+  const scrolled = useScrollAware();
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -40,14 +42,22 @@ export function ResponsiveAppBar() {
     scrollToSection(id);
   };
 
-  return (
-    <AppBar
-      position="fixed"
-      sx={{
+  const barStyles = scrolled
+    ? {
         backdropFilter: "blur(10px)",
-        backgroundColor: "rgba(255, 255, 255, 0.9)",
-      }}
-    >
+        backgroundColor: "rgba(255, 255, 255, 0.5)",
+        boxShadow: 1,
+        transition: "all 0.3s ease-in-out",
+      }
+    : {
+        backgroundColor: grey[100],
+        boxShadow: "none",
+        py: 1,
+        transition: "all 0.3s ease-in-out",
+      };
+
+  return (
+    <AppBar position="fixed" sx={{ ...barStyles }}>
       <Container maxWidth="lg">
         <Toolbar
           disableGutters
@@ -77,7 +87,7 @@ export function ResponsiveAppBar() {
               sx={{
                 flexGrow: 1,
                 display: { xs: "none", md: "flex" },
-                gap: { xs: 0, sm: 0, lg: 2},
+                gap: { xs: 0, sm: 0, lg: 2 },
               }}
             >
               {navItems.map((page) => (
