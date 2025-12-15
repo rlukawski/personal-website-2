@@ -43,19 +43,29 @@ export function ResponsiveAppBar() {
   };
 
   const time = 0.2;
+  const scaleElements = [
+    "box-shadow",
+    "padding-top",
+    "padding-bottom",
+    "background-color",
+    "backdrop-filter",
+  ];
+  const transition = scaleElements
+    .map((element) => `${element} ${time}s ease-in-out`)
+    .join(", ");
   const barStyles = scrolled
     ? {
         backdropFilter: "blur(10px)",
         backgroundColor: "rgba(255, 255, 255, 0.5)",
         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
         py: 0,
-        transition: `box-shadow ${time}s ease-in-out, padding-top ${time}s ease-in-out, padding-bottom ${time}s ease-in-out, background-color ${time}s ease-in-out, backdrop-filter ${time}s ease-in-out`,
+        transition,
       }
     : {
         backgroundColor: grey[100],
         boxShadow: "none",
         py: 1,
-        transition: `box-shadow ${time}s ease-in-out, padding-top ${time}s ease-in-out, padding-bottom ${time}s ease-in-out, background-color ${time}s ease-in-out, backdrop-filter ${time}s ease-in-out`,
+        transition,
       };
 
   return (
@@ -81,6 +91,8 @@ export function ResponsiveAppBar() {
                 letterSpacing: ".3rem",
                 textDecoration: "none",
                 cursor: "pointer",
+                scale: scrolled ? 1.0 : 1.05,
+                transition: `scale ${time}s ease-in-out`,
               }}
             >
               Rafał Łukawski
