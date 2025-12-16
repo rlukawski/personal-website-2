@@ -13,7 +13,7 @@ export function useScrollAnimation() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Animuj gdy sekcja jest widoczna w co najmniej 20%
+        // Animate when section is visible in at least 20%
         if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
           setIsVisible(true);
         }
