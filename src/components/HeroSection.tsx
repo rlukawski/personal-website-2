@@ -9,18 +9,27 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { scrollToSection } from "@/hooks/useScrollSpy";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export function HeroSection() {
   const t = useTranslations("hero");
+  const { elementRef, isVisible } = useScrollAnimation();
 
   return (
     <Box
       id="hero"
+      component="section"
+      ref={elementRef}
       sx={{
         width: "100%",
         py: { xs: 4, md: 6 },
         mt: { xs: 6, md: 6 },
         scrollMarginTop: "48px",
+        scrollSnapAlign: "start",
+        scrollSnapStop: "normal",
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+        transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
       }}
     >
       <Container maxWidth="xl">

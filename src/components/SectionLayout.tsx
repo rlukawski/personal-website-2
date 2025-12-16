@@ -4,6 +4,7 @@ import Container from "@mui/material/Container";
 import { grey } from "@mui/material/colors";
 import { TRANSITION_TIMEOUT } from "./AnimatedHamburger";
 import { ReactNode } from "react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface SectionLayoutProps {
   title: string;
@@ -12,16 +13,24 @@ interface SectionLayoutProps {
 }
 
 export function SectionLayout({ title, children, subtitle, id }: SectionLayoutProps & { id?: string }) {
+  const { elementRef, isVisible } = useScrollAnimation();
+
   return (
     <Box
       id={id}
       component="section"
+      ref={elementRef}
       sx={{
         width: "100%",
         py: { xs: 4, md: 6 },
         display: "flex",
         justifyContent: "center",
         scrollMarginTop: "64px",
+        scrollSnapAlign: "start",
+        scrollSnapStop: "normal",
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+        transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
       }}
     >
       <Container maxWidth="xl" sx={{ paddingX: 0 }}>
