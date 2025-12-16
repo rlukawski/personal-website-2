@@ -12,7 +12,7 @@ import { ProjectManagementSection } from "@/components/ProjectManagementSection"
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 
 export default function Page() {
-  // Dodaj efekt płynnego scrollowania z momentum
+  // Add smooth scrolling effect with momentum
   useSmoothScroll();
   
   return (

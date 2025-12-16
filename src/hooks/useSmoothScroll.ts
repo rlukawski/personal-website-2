@@ -3,8 +3,8 @@
 import { useEffect } from 'react';
 
 /**
- * Hook dodający płynny efekt momentum podczas scrollowania
- * Tworzy wrażenie dynamicznego "ciągnięcia" sekcji
+ * Hook that adds smooth momentum effect during scrolling
+ * Creates a dynamic "pull" impression for sections
  */
 export function useSmoothScroll() {
   useEffect(() => {
@@ -12,17 +12,17 @@ export function useSmoothScroll() {
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
-      // Clear timeout podczas scrollowania
+      // Clear timeout while scrolling
       clearTimeout(scrollTimeout);
 
-      // Po zakończeniu scrollowania (user przestał scrollować)
+      // After scrolling ends (user stopped scrolling)
       scrollTimeout = setTimeout(() => {
         const currentScrollY = window.scrollY;
         const scrollDelta = Math.abs(currentScrollY - lastScrollY);
         
-        // Tylko jeśli scrollowanie było niewielkie (user się zatrzymał blisko sekcji)
+        // Only if scrolling was minimal (user stopped near a section)
         if (scrollDelta < 100) {
-          // Znajdź najbliższą sekcję i delikatnie do niej przyciągnij
+          // Find the closest section and gently snap to it
           const sections = document.querySelectorAll('section');
           const viewportCenter = window.scrollY + window.innerHeight / 2;
           
@@ -32,7 +32,7 @@ export function useSmoothScroll() {
           sections.forEach((section) => {
             const rect = section.getBoundingClientRect();
             const sectionTop = rect.top + window.scrollY;
-            const distance = Math.abs(viewportCenter - sectionTop - 64); // 64px offset dla navbar
+            const distance = Math.abs(viewportCenter - sectionTop - 64); // 64px offset for navbar
 
             if (distance < minDistance) {
               minDistance = distance;
@@ -40,13 +40,13 @@ export function useSmoothScroll() {
             }
           });
 
-          // Jeśli sekcja jest blisko (w zakresie 30% viewport), przyciągnij
+          // If section is close (within 30% of viewport), snap to it
           if (closestSection && minDistance < window.innerHeight * 0.3) {
             const rect = closestSection.getBoundingClientRect();
-            const offset = 64; // wysokość navbar
+            const offset = 64; // navbar height
             const targetPosition = rect.top + window.scrollY - offset;
             
-            // Tylko jeśli różnica nie jest zbyt duża
+            // Only if the difference is not too large
             if (Math.abs(targetPosition - currentScrollY) < window.innerHeight * 0.2) {
               window.scrollTo({
                 top: targetPosition,

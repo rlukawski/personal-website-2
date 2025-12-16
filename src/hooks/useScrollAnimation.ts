@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * Hook dodający animacje fade-in i slide-up podczas scrollowania
- * Tworzy dynamiczne wrażenie podczas przewijania do sekcji
+ * Hook that adds fade-in and slide-up animations during scrolling
+ * Creates a dynamic impression when scrolling to sections
  */
 export function useScrollAnimation() {
   const [isVisible, setIsVisible] = useState(false);
