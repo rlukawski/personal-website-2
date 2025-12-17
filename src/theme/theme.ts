@@ -50,11 +50,11 @@ theme = createTheme(theme, {
     },
     h5: {
       fontFamily: "var(--font-geist-mono), monospace",
-      fontWeight: 600,
+      fontWeight: 700,
       color: grey[800],
     },
     h6: {
-      fontWeight: 600,
+      fontWeight: 700,
       color: grey[800],
     },
     body1: {
