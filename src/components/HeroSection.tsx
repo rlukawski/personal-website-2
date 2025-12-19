@@ -142,7 +142,6 @@ export function HeroSection() {
           <Box
             sx={{
               width: 350,
-              // height: { xs: 200, md: 256 },
               position: "relative",
               overflow: "hidden",
               flexShrink: 0,
