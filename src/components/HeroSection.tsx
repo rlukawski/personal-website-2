@@ -138,10 +138,11 @@ export function HeroSection() {
               </Button>
             </Box>
           </Box>
+
           <Box
             sx={{
-              width: { xs: 200, md: 256 },
-              height: { xs: 200, md: 256 },
+              width: 350,
+              // height: { xs: 200, md: 256 },
               position: "relative",
               overflow: "hidden",
               flexShrink: 0,
@@ -150,19 +151,47 @@ export function HeroSection() {
               "&:hover": {
                 boxShadow: "0 8px 24px rgba(0, 0, 0, 0.35)",
               },
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
             }}
           >
-            <Image
+            {/* <Image
               src="/author.jpg"
               alt="Rafał Łukawski"
               fill
               style={{ objectFit: "cover" }}
               priority
-            />
+            /> */}
+            <Box sx={{ aspectRatio: "16/9", width: "100%", display: "flex" }}>
+              <iframe
+                width="100%"
+                src="https://www.youtube.com/embed/kMqArTOAEVQ?si=79JRN0P1CibtWsPP"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen={true}
+              ></iframe>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <Typography variant="body3" component="span">
+                Rozmowa rekrutacyjna z Rafałem Łukawskim.
+              </Typography>
+              <Typography variant="body3" component="span">
+                Nie całkiem na serio, ale warto zobaczyć.
+              </Typography>
+            </Box>
           </Box>
         </Box>
       </Container>
     </Box>
   );
 }
-

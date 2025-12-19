@@ -5,11 +5,13 @@ import { grey } from "@mui/material/colors";
 declare module '@mui/material/styles' {
   interface TypographyVariants {
     footerLink: React.CSSProperties;
+    body3: React.CSSProperties;
   }
 
   // allow configuration using `createTheme`
   interface TypographyVariantsOptions {
     footerLink?: React.CSSProperties;
+    body3?: React.CSSProperties;
   }
 }
 
@@ -17,6 +19,7 @@ declare module '@mui/material/styles' {
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     footerLink: true;
+    body3: true;
   }
 }
 
@@ -73,6 +76,14 @@ theme = createTheme(theme, {
         fontSize: "1rem",
       },
     },
+    body3: {
+      color: grey[600],
+      fontSize: "0.7rem",
+      lineHeight: 1.4,
+      [theme.breakpoints.up("md")]: {
+        fontSize: "0.8rem",
+      },
+    },    
     footerLink: {
       color: grey[700],
       fontSize: "0.9rem",
