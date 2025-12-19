@@ -183,10 +183,10 @@ export function HeroSection() {
               }}
             >
               <Typography variant="body3" component="span">
-                Rozmowa rekrutacyjna z Rafałem Łukawskim.
+                {t("videoDescriptionLine1")}
               </Typography>
               <Typography variant="body3" component="span">
-                Nie całkiem na serio, ale warto zobaczyć.
+                {t("videoDescriptionLine2")}
               </Typography>
             </Box>
           </Box>
