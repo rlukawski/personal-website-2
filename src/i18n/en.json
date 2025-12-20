@@ -25,7 +25,8 @@
   },
   "projectManagement": {
     "title": "Project Management",
-    "methodologies": "Methodologies"
+    "methodologies": "Methodologies",
+    "tools": "Tools"
   },  
   "technologies": {
     "title": "Tech Stack",

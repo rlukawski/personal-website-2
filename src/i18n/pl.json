@@ -26,7 +26,8 @@
   },
   "projectManagement": {
     "title": "Zarządzanie projektami",
-    "methodologies": "Metodyki"
+    "methodologies": "Metodyki",
+    "tools": "Narzędzia"
   },
   "technologies": {
     "title": "Kluczowe Technologie",

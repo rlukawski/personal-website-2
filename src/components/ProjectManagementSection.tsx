@@ -1,31 +1,13 @@
 "use client";
 
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Chip from "@mui/material/Chip";
 import { SectionLayout } from "./SectionLayout";
 import { useTranslations } from "next-intl";
-import { grey } from "@mui/material/colors";
 import {
-  SiReact,
-  SiTypescript,
-  SiNextdotjs,
-  SiAngular,
-  SiRedux,
-  SiChakraui,
-  SiMui,
-  SiTailwindcss,
-  SiCypress,
-  SiJest,
-  SiNodedotjs,
-  SiPostgresql,
-  SiMysql,
-  SiGit,
-  SiGooglecloud,
-  SiDocker,
-  SiDotnet,
+  SiJira,
+  SiConfluence,
+  SiGithub,
+  SiAsana,
 } from "react-icons/si";
-import { IoMdSettings } from "react-icons/io";
 import { MdLoop } from "react-icons/md";
 import { IconType } from "react-icons";
 import { Categories } from "@/components/Categories";
@@ -56,11 +38,24 @@ export function ProjectManagementSection() {
         { name: "Waterfall", emoji: "📋", color: iconColor },
       ],
     },
+    {
+      title: t("tools"),
+      items: [
+        { name: "Jira", icon: SiJira, color: iconColor },
+        { name: "Confluence", icon: SiConfluence, color: iconColor },
+        { name: "GitHub", icon: SiGithub, color: iconColor },
+        { name: "Asana", icon: SiAsana, color: iconColor },
+      ],
+    },
   ];
 
   return (
     <SectionLayout title={t("title")} id="pm">
-      <Categories categories={categories} template={{ xs: "1fr" }} orientation="row" />
+      <Categories 
+        categories={categories} 
+        template={{ xs: "1fr", sm: "repeat(2, minmax(200px, 230px))" }} 
+        orientation="column" 
+      />
     </SectionLayout>
   );
 }
