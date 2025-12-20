@@ -141,7 +141,8 @@ export function HeroSection() {
 
           <Box
             sx={{
-              width: 350,
+              width: 230,
+              height: 230,
               position: "relative",
               overflow: "hidden",
               flexShrink: 0,
@@ -155,14 +156,15 @@ export function HeroSection() {
               justifyContent: "center",
             }}
           >
-            {/* <Image
+            <Image
               src="/author.jpg"
               alt="Rafał Łukawski"
               fill
               style={{ objectFit: "cover" }}
               priority
-            /> */}
-            <Box sx={{ aspectRatio: "16/9", width: "100%", display: "flex" }}>
+            />
+
+            {/* <Box sx={{ aspectRatio: "16/9", width: "100%", display: "flex" }}>
               <iframe
                 width="100%"
                 src="https://www.youtube.com/embed/kMqArTOAEVQ?si=79JRN0P1CibtWsPP"
@@ -172,8 +174,8 @@ export function HeroSection() {
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen={true}
               ></iframe>
-            </Box>
-            <Box
+            </Box> */}
+            {/* <Box
               sx={{
                 display: "flex",
                 justifyContent: "center",
@@ -187,7 +189,7 @@ export function HeroSection() {
               <Typography variant="body3" component="span">
                 {t("videoDescriptionLine2")}
               </Typography>
-            </Box>
+            </Box> */}
           </Box>
         </Box>
       </Container>
